@@ -34,7 +34,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<string>LoginViewController</string>
 				</dict>
 			</array>
 		</dict>
@@ -61,6 +61,12 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OpenSansBold.ttf</string>
+		<string>OpenSansRegular.ttf</string>
+		<string>OpenSansSemibold.ttf</string>
 	</array>
 </dict>
 </plist>

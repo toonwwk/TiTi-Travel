@@ -7,15 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59F7C722578E8961A8E30B64 /* Pods_TiTi_Travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A536015A272A7FE3C42F19 /* Pods_TiTi_Travel.framework */; };
+		C83E1FCC25DAE9DF00B5009E /* OpenSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C83E1FCB25DAE9DF00B5009E /* OpenSansBold.ttf */; };
+		C83E1FCF25DAE9F400B5009E /* OpenSansSemibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C83E1FCE25DAE9F400B5009E /* OpenSansSemibold.ttf */; };
+		C83E1FD225DAEA5F00B5009E /* OpenSansRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C83E1FD125DAEA5F00B5009E /* OpenSansRegular.ttf */; };
+		C83E1FD625DAEE6200B5009E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E1FD525DAEE6200B5009E /* LoginViewModel.swift */; };
+		C83E1FE225DAF48700B5009E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E1FE125DAF48700B5009E /* RoundButton.swift */; };
+		C83E1FEA25DAF8A400B5009E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E1FE925DAF8A400B5009E /* Service.swift */; };
 		C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E0E125D980A100FCADAC /* AppDelegate.swift */; };
 		C896E0E425D980A100FCADAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E0E325D980A100FCADAC /* SceneDelegate.swift */; };
 		C896E0E625D980A100FCADAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E0E525D980A100FCADAC /* ViewController.swift */; };
 		C896E0E925D980A100FCADAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C896E0E725D980A100FCADAC /* Main.storyboard */; };
 		C896E0EB25D980A300FCADAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C896E0EA25D980A300FCADAC /* Assets.xcassets */; };
 		C896E0EE25D980A300FCADAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C896E0EC25D980A300FCADAC /* LaunchScreen.storyboard */; };
+		C896E0FF25D986C200FCADAC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C896E0FE25D986C200FCADAC /* LoginViewController.storyboard */; };
+		C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10125D986E600FCADAC /* LoginViewController.swift */; };
+		C896E10925D98B0600FCADAC /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10825D98B0600FCADAC /* BorderView.swift */; };
+		C896E10C25D991C400FCADAC /* AppAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10B25D991C400FCADAC /* AppAsset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BFB016B0EF387FA7188624E /* Pods-TiTi-Travel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiTi-Travel.release.xcconfig"; path = "Target Support Files/Pods-TiTi-Travel/Pods-TiTi-Travel.release.xcconfig"; sourceTree = "<group>"; };
+		3213AE0AAD1D84AE04E206F6 /* Pods-TiTi-Travel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiTi-Travel.debug.xcconfig"; path = "Target Support Files/Pods-TiTi-Travel/Pods-TiTi-Travel.debug.xcconfig"; sourceTree = "<group>"; };
+		C7A536015A272A7FE3C42F19 /* Pods_TiTi_Travel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiTi_Travel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83E1FCB25DAE9DF00B5009E /* OpenSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansBold.ttf; sourceTree = "<group>"; };
+		C83E1FCE25DAE9F400B5009E /* OpenSansSemibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemibold.ttf; sourceTree = "<group>"; };
+		C83E1FD125DAEA5F00B5009E /* OpenSansRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansRegular.ttf; sourceTree = "<group>"; };
+		C83E1FD525DAEE6200B5009E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C83E1FE125DAF48700B5009E /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		C83E1FE925DAF8A400B5009E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C896E0DE25D980A100FCADAC /* TiTi-Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TiTi-Travel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C896E0E125D980A100FCADAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C896E0E325D980A100FCADAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +44,10 @@
 		C896E0EA25D980A300FCADAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C896E0ED25D980A300FCADAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C896E0EF25D980A300FCADAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C896E0FE25D986C200FCADAC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		C896E10125D986E600FCADAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C896E10825D98B0600FCADAC /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		C896E10B25D991C400FCADAC /* AppAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAsset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F7C722578E8961A8E30B64 /* Pods_TiTi_Travel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E6AD3705BCF26B273224122 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7A536015A272A7FE3C42F19 /* Pods_TiTi_Travel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C83E1FCA25DAE9B800B5009E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C83E1FCB25DAE9DF00B5009E /* OpenSansBold.ttf */,
+				C83E1FD125DAEA5F00B5009E /* OpenSansRegular.ttf */,
+				C83E1FCE25DAE9F400B5009E /* OpenSansSemibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C83E1FE425DAF51900B5009E /* RoundButton */ = {
+			isa = PBXGroup;
+			children = (
+				C83E1FE125DAF48700B5009E /* RoundButton.swift */,
+			);
+			path = RoundButton;
+			sourceTree = "<group>";
+		};
+		C83E1FE825DAF88E00B5009E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C83E1FE925DAF8A400B5009E /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		C896E0D525D980A100FCADAC = {
 			isa = PBXGroup;
 			children = (
 				C896E0E025D980A100FCADAC /* TiTi-Travel */,
 				C896E0DF25D980A100FCADAC /* Products */,
+				F819B71C7ACEE281372A8C96 /* Pods */,
+				4E6AD3705BCF26B273224122 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +117,9 @@
 		C896E0E025D980A100FCADAC /* TiTi-Travel */ = {
 			isa = PBXGroup;
 			children = (
+				C83E1FE825DAF88E00B5009E /* Service */,
+				C83E1FCA25DAE9B800B5009E /* Fonts */,
+				C896E0FD25D9867800FCADAC /* Login */,
 				C896E0E125D980A100FCADAC /* AppDelegate.swift */,
 				C896E0E325D980A100FCADAC /* SceneDelegate.swift */,
 				C896E0E525D980A100FCADAC /* ViewController.swift */,
@@ -63,8 +127,38 @@
 				C896E0EA25D980A300FCADAC /* Assets.xcassets */,
 				C896E0EC25D980A300FCADAC /* LaunchScreen.storyboard */,
 				C896E0EF25D980A300FCADAC /* Info.plist */,
+				C896E10B25D991C400FCADAC /* AppAsset.swift */,
 			);
 			path = "TiTi-Travel";
+			sourceTree = "<group>";
+		};
+		C896E0FD25D9867800FCADAC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C83E1FE425DAF51900B5009E /* RoundButton */,
+				C896E10425D9896300FCADAC /* BorderView */,
+				C896E0FE25D986C200FCADAC /* LoginViewController.storyboard */,
+				C896E10125D986E600FCADAC /* LoginViewController.swift */,
+				C83E1FD525DAEE6200B5009E /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C896E10425D9896300FCADAC /* BorderView */ = {
+			isa = PBXGroup;
+			children = (
+				C896E10825D98B0600FCADAC /* BorderView.swift */,
+			);
+			path = BorderView;
+			sourceTree = "<group>";
+		};
+		F819B71C7ACEE281372A8C96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3213AE0AAD1D84AE04E206F6 /* Pods-TiTi-Travel.debug.xcconfig */,
+				0BFB016B0EF387FA7188624E /* Pods-TiTi-Travel.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +168,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C896E0F225D980A300FCADAC /* Build configuration list for PBXNativeTarget "TiTi-Travel" */;
 			buildPhases = (
+				C990D18769535EC18DC1E66A /* [CP] Check Pods Manifest.lock */,
 				C896E0DA25D980A100FCADAC /* Sources */,
 				C896E0DB25D980A100FCADAC /* Frameworks */,
 				C896E0DC25D980A100FCADAC /* Resources */,
@@ -125,21 +220,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				C896E0EE25D980A300FCADAC /* LaunchScreen.storyboard in Resources */,
+				C896E0FF25D986C200FCADAC /* LoginViewController.storyboard in Resources */,
+				C83E1FCC25DAE9DF00B5009E /* OpenSansBold.ttf in Resources */,
 				C896E0EB25D980A300FCADAC /* Assets.xcassets in Resources */,
+				C83E1FCF25DAE9F400B5009E /* OpenSansSemibold.ttf in Resources */,
+				C83E1FD225DAEA5F00B5009E /* OpenSansRegular.ttf in Resources */,
 				C896E0E925D980A100FCADAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C990D18769535EC18DC1E66A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TiTi-Travel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C896E0DA25D980A100FCADAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83E1FE225DAF48700B5009E /* RoundButton.swift in Sources */,
+				C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */,
+				C896E10925D98B0600FCADAC /* BorderView.swift in Sources */,
 				C896E0E625D980A100FCADAC /* ViewController.swift in Sources */,
 				C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */,
+				C83E1FEA25DAF8A400B5009E /* Service.swift in Sources */,
 				C896E0E425D980A100FCADAC /* SceneDelegate.swift in Sources */,
+				C896E10C25D991C400FCADAC /* AppAsset.swift in Sources */,
+				C83E1FD625DAEE6200B5009E /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,6 +413,7 @@
 		};
 		C896E0F325D980A300FCADAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3213AE0AAD1D84AE04E206F6 /* Pods-TiTi-Travel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,12 +427,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "WWK.TiTi-Travel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C896E0F425D980A300FCADAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BFB016B0EF387FA7188624E /* Pods-TiTi-Travel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,7 +447,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "WWK.TiTi-Travel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

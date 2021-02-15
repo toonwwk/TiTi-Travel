@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OQZ-fl-MeF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="w37-Fd-Flq">
+            <objects>
+                <viewController id="OQZ-fl-MeF" customClass="LoginViewController" customModule="TiTi_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yIf-2w-4H2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TTZ-0E-Dxh">
+                                <rect key="frame" x="132" y="124" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="bQe-xZ-gHS"/>
+                                    <constraint firstAttribute="height" constant="150" id="pS6-hd-sfd"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXJ-Qb-HZt">
+                                <rect key="frame" x="30" y="294" width="354" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRY-jU-okQ" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0BH-G1-SRa">
+                                                <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="0BH-G1-SRa" secondAttribute="bottom" constant="10" id="Hj0-lU-XFA"/>
+                                            <constraint firstItem="0BH-G1-SRa" firstAttribute="leading" secondItem="VRY-jU-okQ" secondAttribute="leading" constant="10" id="IKL-Nw-mbT"/>
+                                            <constraint firstAttribute="width" constant="40" id="POh-0E-kcC"/>
+                                            <constraint firstItem="0BH-G1-SRa" firstAttribute="top" secondItem="VRY-jU-okQ" secondAttribute="top" constant="10" id="gUp-kD-mPb"/>
+                                            <constraint firstAttribute="height" constant="40" id="j4Y-aT-RM2"/>
+                                            <constraint firstAttribute="trailing" secondItem="0BH-G1-SRa" secondAttribute="trailing" constant="10" id="zHh-Rh-mF0"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="do9-We-6cF" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="0.0" width="314" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQO-Tp-zCt">
+                                                <rect key="frame" x="7" y="7" width="4" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="rQO-Tp-zCt" secondAttribute="bottom" constant="7" id="57t-zi-ihD"/>
+                                            <constraint firstItem="rQO-Tp-zCt" firstAttribute="leading" secondItem="do9-We-6cF" secondAttribute="leading" constant="7" id="Hu7-9k-lmk"/>
+                                            <constraint firstItem="rQO-Tp-zCt" firstAttribute="top" secondItem="do9-We-6cF" secondAttribute="top" constant="7" id="Lxq-XX-ffZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rQO-Tp-zCt" secondAttribute="trailing" constant="7" id="TGj-Nu-UFY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VRY-jU-okQ" secondAttribute="bottom" id="9Ol-Oc-Uqj"/>
+                                    <constraint firstItem="VRY-jU-okQ" firstAttribute="leading" secondItem="TXJ-Qb-HZt" secondAttribute="leading" id="Fyt-6B-O9b"/>
+                                    <constraint firstAttribute="trailing" secondItem="do9-We-6cF" secondAttribute="trailing" id="MyD-Sc-e2A"/>
+                                    <constraint firstItem="VRY-jU-okQ" firstAttribute="top" secondItem="TXJ-Qb-HZt" secondAttribute="top" id="bpy-YL-qWf"/>
+                                    <constraint firstAttribute="bottom" secondItem="do9-We-6cF" secondAttribute="bottom" id="fOh-kD-cCZ"/>
+                                    <constraint firstItem="do9-We-6cF" firstAttribute="leading" secondItem="VRY-jU-okQ" secondAttribute="trailing" id="mux-d3-bOf"/>
+                                    <constraint firstItem="do9-We-6cF" firstAttribute="top" secondItem="TXJ-Qb-HZt" secondAttribute="top" id="uLr-Z5-Ln7"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0U-fd-kEN">
+                                <rect key="frame" x="30" y="354" width="354" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9Z-3W-thd" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GK0-ip-UnC">
+                                                <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Bdf-io-6D9"/>
+                                            <constraint firstAttribute="height" constant="40" id="DqF-1s-4El"/>
+                                            <constraint firstItem="GK0-ip-UnC" firstAttribute="top" secondItem="I9Z-3W-thd" secondAttribute="top" constant="10" id="Rld-Sf-hFc"/>
+                                            <constraint firstAttribute="trailing" secondItem="GK0-ip-UnC" secondAttribute="trailing" constant="10" id="eYD-cn-9kB"/>
+                                            <constraint firstAttribute="bottom" secondItem="GK0-ip-UnC" secondAttribute="bottom" constant="10" id="h02-ue-E9E"/>
+                                            <constraint firstItem="GK0-ip-UnC" firstAttribute="leading" secondItem="I9Z-3W-thd" secondAttribute="leading" constant="10" id="jkS-sN-s9Y"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2r-Id-11N" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="0.0" width="314" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMo-qT-vaL">
+                                                <rect key="frame" x="7" y="7" width="4" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="DMo-qT-vaL" secondAttribute="bottom" constant="7" id="5XG-ze-E7u"/>
+                                            <constraint firstItem="DMo-qT-vaL" firstAttribute="top" secondItem="N2r-Id-11N" secondAttribute="top" constant="7" id="Hwv-Ep-6MY"/>
+                                            <constraint firstItem="DMo-qT-vaL" firstAttribute="leading" secondItem="N2r-Id-11N" secondAttribute="leading" constant="7" id="en2-XX-09A"/>
+                                            <constraint firstAttribute="trailing" secondItem="DMo-qT-vaL" secondAttribute="trailing" constant="7" id="hl6-CT-r4I"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="I9Z-3W-thd" firstAttribute="top" secondItem="U0U-fd-kEN" secondAttribute="top" id="9ho-vG-niA"/>
+                                    <constraint firstAttribute="trailing" secondItem="N2r-Id-11N" secondAttribute="trailing" id="D3m-l2-xme"/>
+                                    <constraint firstItem="N2r-Id-11N" firstAttribute="top" secondItem="U0U-fd-kEN" secondAttribute="top" id="JiY-aA-skj"/>
+                                    <constraint firstAttribute="bottom" secondItem="N2r-Id-11N" secondAttribute="bottom" id="PDu-Oj-Hfm"/>
+                                    <constraint firstAttribute="bottom" secondItem="I9Z-3W-thd" secondAttribute="bottom" id="mo2-SV-NO3"/>
+                                    <constraint firstItem="I9Z-3W-thd" firstAttribute="leading" secondItem="U0U-fd-kEN" secondAttribute="leading" id="u5v-Bd-f5E"/>
+                                    <constraint firstItem="N2r-Id-11N" firstAttribute="leading" secondItem="I9Z-3W-thd" secondAttribute="trailing" id="xEh-Ua-srK"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k7-FI-9SE">
+                                <rect key="frame" x="30" y="474" width="354" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didPressForgetPasswordButton:" destination="OQZ-fl-MeF" eventType="touchUpInside" id="RvP-WU-IFH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-H4-gWJ" customClass="RoundButton" customModule="TiTi_Travel" customModuleProvider="target">
+                                <rect key="frame" x="30" y="414" width="354" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="V2Q-3a-T4E"/>
+                                    <constraint firstAttribute="height" constant="40" id="uKL-yw-X2U"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didPressLoginButton:" destination="OQZ-fl-MeF" eventType="touchUpInside" id="JAk-Ga-rob"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqn-CG-qoK">
+                                <rect key="frame" x="165.5" y="827" width="83.5" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7L-Eh-SDf">
+                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="BrS-9k-yyQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-rK-Lfd">
+                                        <rect key="frame" x="37.5" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="K8V-1I-fzG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didPressRegisterButton:" destination="OQZ-fl-MeF" eventType="touchUpInside" id="mBL-p3-4Uh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nOH-Ll-TR7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fj5-vD-Dqv"/>
+                        <color key="backgroundColor" red="0.31372549020000001" green="0.63921568630000003" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6k7-FI-9SE" firstAttribute="top" secondItem="b7B-H4-gWJ" secondAttribute="bottom" constant="20" id="2mt-aW-SV1"/>
+                            <constraint firstItem="b7B-H4-gWJ" firstAttribute="top" secondItem="U0U-fd-kEN" secondAttribute="bottom" constant="20" id="66J-JA-ce6"/>
+                            <constraint firstItem="U0U-fd-kEN" firstAttribute="top" secondItem="TXJ-Qb-HZt" secondAttribute="bottom" constant="20" id="BFK-Yg-AGA"/>
+                            <constraint firstItem="Fj5-vD-Dqv" firstAttribute="trailing" secondItem="6k7-FI-9SE" secondAttribute="trailing" constant="30" id="Duz-Q7-1sw"/>
+                            <constraint firstItem="Fj5-vD-Dqv" firstAttribute="trailing" secondItem="TXJ-Qb-HZt" secondAttribute="trailing" constant="30" id="PAt-PW-Ksi"/>
+                            <constraint firstItem="cqn-CG-qoK" firstAttribute="centerX" secondItem="yIf-2w-4H2" secondAttribute="centerX" id="Sh9-6x-pMd"/>
+                            <constraint firstItem="Fj5-vD-Dqv" firstAttribute="trailing" secondItem="b7B-H4-gWJ" secondAttribute="trailing" constant="30" id="UpU-oy-yhs"/>
+                            <constraint firstItem="Fj5-vD-Dqv" firstAttribute="trailing" secondItem="U0U-fd-kEN" secondAttribute="trailing" constant="30" id="Xlj-VN-J04"/>
+                            <constraint firstItem="TXJ-Qb-HZt" firstAttribute="leading" secondItem="Fj5-vD-Dqv" secondAttribute="leading" constant="30" id="ZKp-HM-d7q"/>
+                            <constraint firstItem="b7B-H4-gWJ" firstAttribute="leading" secondItem="Fj5-vD-Dqv" secondAttribute="leading" constant="30" id="aKW-0o-qV6"/>
+                            <constraint firstItem="Fj5-vD-Dqv" firstAttribute="bottom" secondItem="cqn-CG-qoK" secondAttribute="bottom" constant="5" id="dQ3-Md-P6p"/>
+                            <constraint firstItem="TTZ-0E-Dxh" firstAttribute="centerX" secondItem="yIf-2w-4H2" secondAttribute="centerX" id="iKs-A3-Z0a"/>
+                            <constraint firstItem="U0U-fd-kEN" firstAttribute="leading" secondItem="Fj5-vD-Dqv" secondAttribute="leading" constant="30" id="niS-hR-qJJ"/>
+                            <constraint firstItem="6k7-FI-9SE" firstAttribute="leading" secondItem="Fj5-vD-Dqv" secondAttribute="leading" constant="30" id="pwI-79-Lf5"/>
+                            <constraint firstItem="TTZ-0E-Dxh" firstAttribute="top" secondItem="Fj5-vD-Dqv" secondAttribute="top" constant="80" id="skW-c0-Npk"/>
+                            <constraint firstItem="TXJ-Qb-HZt" firstAttribute="top" secondItem="TTZ-0E-Dxh" secondAttribute="bottom" constant="20" id="yEj-HX-mXQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="yIf-2w-4H2" id="tjV-1Y-XRg"/>
+                        <outlet property="forgetPasswordButton" destination="6k7-FI-9SE" id="6zS-Fs-zcd"/>
+                        <outlet property="iconAppImageView" destination="TTZ-0E-Dxh" id="fn8-Z1-LPg"/>
+                        <outlet property="iconPasswordImageView" destination="GK0-ip-UnC" id="uuV-PL-BXb"/>
+                        <outlet property="iconUserImageView" destination="0BH-G1-SRa" id="0sF-QE-Eca"/>
+                        <outlet property="loginButton" destination="b7B-H4-gWJ" id="DEd-Yd-lVS"/>
+                        <outlet property="passwordTextField" destination="DMo-qT-vaL" id="qU3-IB-F66"/>
+                        <outlet property="registerButton" destination="KWv-rK-Lfd" id="LkA-O7-AWY"/>
+                        <outlet property="registerLabel" destination="L7L-Eh-SDf" id="6JH-1b-5DY"/>
+                        <outlet property="usernameTextField" destination="rQO-Tp-zCt" id="mb7-j6-Ync"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgB-oJ-ruX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-299" y="155"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
