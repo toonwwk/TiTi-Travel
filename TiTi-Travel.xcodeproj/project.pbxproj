@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,16 +14,24 @@
 		C83E1FD625DAEE6200B5009E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E1FD525DAEE6200B5009E /* LoginViewModel.swift */; };
 		C83E1FE225DAF48700B5009E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E1FE125DAF48700B5009E /* RoundButton.swift */; };
 		C83E1FEA25DAF8A400B5009E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E1FE925DAF8A400B5009E /* Service.swift */; };
+		C85893D825E1220B00412063 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85893D725E1220B00412063 /* MapViewControllerViewModel.swift */; };
+		C864855F25DFE80700DE71F0 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C864855E25DFE80700DE71F0 /* MapViewController.storyboard */; };
+		C864856225DFE83C00DE71F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864856125DFE83C00DE71F0 /* MapViewController.swift */; };
+		C864856725E0009400DE71F0 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864856625E0009400DE71F0 /* LineView.swift */; };
+		C864856D25E001DC00DE71F0 /* RoundViewWithEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864856C25E001DC00DE71F0 /* RoundViewWithEffect.swift */; };
+		C87EF96C25DC5BB800DD0C34 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */; };
+		C87EF96F25DC5C5C00DD0C34 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */; };
+		C87EF98125DC61B600DD0C34 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87EF98025DC61B600DD0C34 /* R.generated.swift */; };
 		C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E0E125D980A100FCADAC /* AppDelegate.swift */; };
 		C896E0E425D980A100FCADAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E0E325D980A100FCADAC /* SceneDelegate.swift */; };
-		C896E0E625D980A100FCADAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E0E525D980A100FCADAC /* ViewController.swift */; };
-		C896E0E925D980A100FCADAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C896E0E725D980A100FCADAC /* Main.storyboard */; };
 		C896E0EB25D980A300FCADAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C896E0EA25D980A300FCADAC /* Assets.xcassets */; };
 		C896E0EE25D980A300FCADAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C896E0EC25D980A300FCADAC /* LaunchScreen.storyboard */; };
 		C896E0FF25D986C200FCADAC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C896E0FE25D986C200FCADAC /* LoginViewController.storyboard */; };
 		C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10125D986E600FCADAC /* LoginViewController.swift */; };
 		C896E10925D98B0600FCADAC /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10825D98B0600FCADAC /* BorderView.swift */; };
-		C896E10C25D991C400FCADAC /* AppAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10B25D991C400FCADAC /* AppAsset.swift */; };
+		C896E10C25D991C400FCADAC /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10B25D991C400FCADAC /* helper.swift */; };
+		C8E2BADA25E3BDED00AD1D00 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAD925E3BDED00AD1D00 /* Coordinator.swift */; };
+		C8E2BADE25E3BEEA00AD1D00 /* UserAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BADD25E3BEEA00AD1D00 /* UserAuthCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,18 +44,26 @@
 		C83E1FD525DAEE6200B5009E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C83E1FE125DAF48700B5009E /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C83E1FE925DAF8A400B5009E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		C85893D725E1220B00412063 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
+		C864855E25DFE80700DE71F0 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		C864856125DFE83C00DE71F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C864856625E0009400DE71F0 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		C864856C25E001DC00DE71F0 /* RoundViewWithEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewWithEffect.swift; sourceTree = "<group>"; };
+		C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
+		C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C87EF98025DC61B600DD0C34 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		C896E0DE25D980A100FCADAC /* TiTi-Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TiTi-Travel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C896E0E125D980A100FCADAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C896E0E325D980A100FCADAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C896E0E525D980A100FCADAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C896E0E825D980A100FCADAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C896E0EA25D980A300FCADAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C896E0ED25D980A300FCADAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C896E0EF25D980A300FCADAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C896E0FE25D986C200FCADAC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		C896E10125D986E600FCADAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C896E10825D98B0600FCADAC /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
-		C896E10B25D991C400FCADAC /* AppAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAsset.swift; sourceTree = "<group>"; };
+		C896E10B25D991C400FCADAC /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		C8E2BAD925E3BDED00AD1D00 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C8E2BADD25E3BEEA00AD1D00 /* UserAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,20 +96,42 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		C83E1FE425DAF51900B5009E /* RoundButton */ = {
-			isa = PBXGroup;
-			children = (
-				C83E1FE125DAF48700B5009E /* RoundButton.swift */,
-			);
-			path = RoundButton;
-			sourceTree = "<group>";
-		};
 		C83E1FE825DAF88E00B5009E /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				C83E1FE925DAF8A400B5009E /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		C864855D25DFE7ED00DE71F0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C864855E25DFE80700DE71F0 /* MapViewController.storyboard */,
+				C864856125DFE83C00DE71F0 /* MapViewController.swift */,
+				C85893D725E1220B00412063 /* MapViewControllerViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C864856B25E001AB00DE71F0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C83E1FE125DAF48700B5009E /* RoundButton.swift */,
+				C896E10825D98B0600FCADAC /* BorderView.swift */,
+				C864856625E0009400DE71F0 /* LineView.swift */,
+				C864856C25E001DC00DE71F0 /* RoundViewWithEffect.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C87EF96A25DC5B9800DD0C34 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */,
+				C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		C896E0D525D980A100FCADAC = {
@@ -117,17 +155,20 @@
 		C896E0E025D980A100FCADAC /* TiTi-Travel */ = {
 			isa = PBXGroup;
 			children = (
-				C83E1FE825DAF88E00B5009E /* Service */,
 				C83E1FCA25DAE9B800B5009E /* Fonts */,
+				C864856B25E001AB00DE71F0 /* Components */,
+				C8E2BAD825E3BDCD00AD1D00 /* Coordinator */,
+				C83E1FE825DAF88E00B5009E /* Service */,
 				C896E0FD25D9867800FCADAC /* Login */,
+				C87EF96A25DC5B9800DD0C34 /* Register */,
+				C864855D25DFE7ED00DE71F0 /* Map */,
 				C896E0E125D980A100FCADAC /* AppDelegate.swift */,
 				C896E0E325D980A100FCADAC /* SceneDelegate.swift */,
-				C896E0E525D980A100FCADAC /* ViewController.swift */,
-				C896E0E725D980A100FCADAC /* Main.storyboard */,
 				C896E0EA25D980A300FCADAC /* Assets.xcassets */,
 				C896E0EC25D980A300FCADAC /* LaunchScreen.storyboard */,
 				C896E0EF25D980A300FCADAC /* Info.plist */,
-				C896E10B25D991C400FCADAC /* AppAsset.swift */,
+				C896E10B25D991C400FCADAC /* helper.swift */,
+				C87EF98025DC61B600DD0C34 /* R.generated.swift */,
 			);
 			path = "TiTi-Travel";
 			sourceTree = "<group>";
@@ -135,8 +176,6 @@
 		C896E0FD25D9867800FCADAC /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				C83E1FE425DAF51900B5009E /* RoundButton */,
-				C896E10425D9896300FCADAC /* BorderView */,
 				C896E0FE25D986C200FCADAC /* LoginViewController.storyboard */,
 				C896E10125D986E600FCADAC /* LoginViewController.swift */,
 				C83E1FD525DAEE6200B5009E /* LoginViewModel.swift */,
@@ -144,12 +183,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		C896E10425D9896300FCADAC /* BorderView */ = {
+		C8E2BAD825E3BDCD00AD1D00 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				C896E10825D98B0600FCADAC /* BorderView.swift */,
+				C8E2BAD925E3BDED00AD1D00 /* Coordinator.swift */,
+				C8E2BADD25E3BEEA00AD1D00 /* UserAuthCoordinator.swift */,
 			);
-			path = BorderView;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		F819B71C7ACEE281372A8C96 /* Pods */ = {
@@ -169,9 +209,11 @@
 			buildConfigurationList = C896E0F225D980A300FCADAC /* Build configuration list for PBXNativeTarget "TiTi-Travel" */;
 			buildPhases = (
 				C990D18769535EC18DC1E66A /* [CP] Check Pods Manifest.lock */,
+				C87EF97925DC5FE900DD0C34 /* ShellScript */,
 				C896E0DA25D980A100FCADAC /* Sources */,
 				C896E0DB25D980A100FCADAC /* Frameworks */,
 				C896E0DC25D980A100FCADAC /* Resources */,
+				2F36790DD58C341EEF24625B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,19 +261,56 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C864855F25DFE80700DE71F0 /* MapViewController.storyboard in Resources */,
 				C896E0EE25D980A300FCADAC /* LaunchScreen.storyboard in Resources */,
 				C896E0FF25D986C200FCADAC /* LoginViewController.storyboard in Resources */,
 				C83E1FCC25DAE9DF00B5009E /* OpenSansBold.ttf in Resources */,
 				C896E0EB25D980A300FCADAC /* Assets.xcassets in Resources */,
+				C87EF96C25DC5BB800DD0C34 /* RegisterViewController.storyboard in Resources */,
 				C83E1FCF25DAE9F400B5009E /* OpenSansSemibold.ttf in Resources */,
 				C83E1FD225DAEA5F00B5009E /* OpenSansRegular.ttf in Resources */,
-				C896E0E925D980A100FCADAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F36790DD58C341EEF24625B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TiTi-Travel/Pods-TiTi-Travel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TiTi-Travel/Pods-TiTi-Travel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TiTi-Travel/Pods-TiTi-Travel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C87EF97925DC5FE900DD0C34 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		C990D18769535EC18DC1E66A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,29 +340,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C864856225DFE83C00DE71F0 /* MapViewController.swift in Sources */,
 				C83E1FE225DAF48700B5009E /* RoundButton.swift in Sources */,
+				C8E2BADA25E3BDED00AD1D00 /* Coordinator.swift in Sources */,
+				C87EF96F25DC5C5C00DD0C34 /* RegisterViewController.swift in Sources */,
 				C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */,
 				C896E10925D98B0600FCADAC /* BorderView.swift in Sources */,
-				C896E0E625D980A100FCADAC /* ViewController.swift in Sources */,
 				C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */,
+				C85893D825E1220B00412063 /* MapViewControllerViewModel.swift in Sources */,
 				C83E1FEA25DAF8A400B5009E /* Service.swift in Sources */,
+				C8E2BADE25E3BEEA00AD1D00 /* UserAuthCoordinator.swift in Sources */,
 				C896E0E425D980A100FCADAC /* SceneDelegate.swift in Sources */,
-				C896E10C25D991C400FCADAC /* AppAsset.swift in Sources */,
+				C864856725E0009400DE71F0 /* LineView.swift in Sources */,
+				C896E10C25D991C400FCADAC /* helper.swift in Sources */,
+				C864856D25E001DC00DE71F0 /* RoundViewWithEffect.swift in Sources */,
 				C83E1FD625DAEE6200B5009E /* LoginViewModel.swift in Sources */,
+				C87EF98125DC61B600DD0C34 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C896E0E725D980A100FCADAC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C896E0E825D980A100FCADAC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C896E0EC25D980A300FCADAC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
