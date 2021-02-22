@@ -30,8 +30,9 @@
 		C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10125D986E600FCADAC /* LoginViewController.swift */; };
 		C896E10925D98B0600FCADAC /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10825D98B0600FCADAC /* BorderView.swift */; };
 		C896E10C25D991C400FCADAC /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10B25D991C400FCADAC /* helper.swift */; };
-		C8E2BADA25E3BDED00AD1D00 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAD925E3BDED00AD1D00 /* Coordinator.swift */; };
-		C8E2BADE25E3BEEA00AD1D00 /* UserAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BADD25E3BEEA00AD1D00 /* UserAuthCoordinator.swift */; };
+		C8E2BADA25E3BDED00AD1D00 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAD925E3BDED00AD1D00 /* ApplicationCoordinator.swift */; };
+		C8E2BADE25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */; };
+		C8E2BAE225E3F94500AD1D00 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAE125E3F94500AD1D00 /* MapCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +63,9 @@
 		C896E10125D986E600FCADAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C896E10825D98B0600FCADAC /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		C896E10B25D991C400FCADAC /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
-		C8E2BAD925E3BDED00AD1D00 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		C8E2BADD25E3BEEA00AD1D00 /* UserAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthCoordinator.swift; sourceTree = "<group>"; };
+		C8E2BAD925E3BDED00AD1D00 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		C8E2BAE125E3F94500AD1D00 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +188,9 @@
 		C8E2BAD825E3BDCD00AD1D00 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2BAD925E3BDED00AD1D00 /* Coordinator.swift */,
-				C8E2BADD25E3BEEA00AD1D00 /* UserAuthCoordinator.swift */,
+				C8E2BAD925E3BDED00AD1D00 /* ApplicationCoordinator.swift */,
+				C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */,
+				C8E2BAE125E3F94500AD1D00 /* MapCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -342,14 +345,15 @@
 			files = (
 				C864856225DFE83C00DE71F0 /* MapViewController.swift in Sources */,
 				C83E1FE225DAF48700B5009E /* RoundButton.swift in Sources */,
-				C8E2BADA25E3BDED00AD1D00 /* Coordinator.swift in Sources */,
+				C8E2BADA25E3BDED00AD1D00 /* ApplicationCoordinator.swift in Sources */,
 				C87EF96F25DC5C5C00DD0C34 /* RegisterViewController.swift in Sources */,
 				C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */,
 				C896E10925D98B0600FCADAC /* BorderView.swift in Sources */,
 				C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */,
 				C85893D825E1220B00412063 /* MapViewControllerViewModel.swift in Sources */,
 				C83E1FEA25DAF8A400B5009E /* Service.swift in Sources */,
-				C8E2BADE25E3BEEA00AD1D00 /* UserAuthCoordinator.swift in Sources */,
+				C8E2BADE25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift in Sources */,
+				C8E2BAE225E3F94500AD1D00 /* MapCoordinator.swift in Sources */,
 				C896E0E425D980A100FCADAC /* SceneDelegate.swift in Sources */,
 				C864856725E0009400DE71F0 /* LineView.swift in Sources */,
 				C896E10C25D991C400FCADAC /* helper.swift in Sources */,

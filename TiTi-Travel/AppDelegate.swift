@@ -11,10 +11,22 @@ import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var coordinator: ApplicationCoordinator?
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
+                
+        guard #available(iOS 13, *) else {
+            let navController = UINavigationController()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            coordinator = ApplicationCoordinator(navigationController: navController)
+            coordinator?.start()
+            window?.rootViewController = navController
+            window?.makeKeyAndVisible()
+            return true
+        }
+
         return true
     }
 

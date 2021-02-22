@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol registerViewControllerDelegate: AnyObject {
+    func registerViewControllerDidTapNextButton(_ registerViewController: RegisterViewController)
+}
+
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
@@ -19,6 +23,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var nextButton: RoundButton!
+    
+    weak var delegate: registerViewControllerDelegate?
     
     static func instantiate() -> RegisterViewController {
         return R.storyboard.registerViewController.instantiateInitialViewController()!
@@ -76,7 +82,6 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func didTapNextButton(_ sender: Any) {
-        let mapVC = MapViewController.instantiate()
-        self.navigationController?.pushViewController(mapVC, animated: true)
+        delegate?.registerViewControllerDidTapNextButton(self)
     }
 }

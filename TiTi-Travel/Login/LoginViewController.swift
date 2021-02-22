@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol  LoginViewControllerDelegate: AnyObject {
+    func loginViewControllerDidTapRegisterButton(_ loginViewController: LoginViewController)
+    func loginViewControllerDidTapLoginButton(_ loginViewController: LoginViewController)
+}
+
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
@@ -18,7 +23,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgetPasswordButton: UIButton!
     @IBOutlet weak var registerLabel: UILabel!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var registerButton: RoundButton!
+
+    weak var delegate: LoginViewControllerDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,6 +36,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         commonInit()
         configureNavigationBar()
+    }
+
+    static func instantiate() -> LoginViewController {
+        return R.storyboard.loginViewController.instantiateInitialViewController()!
     }
     
     func commonInit() {
@@ -65,25 +76,20 @@ class LoginViewController: UIViewController {
     func configureNavigationBar() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = UIColor.app.white
-        navigationController?.navigationBar.barTintColor = UIColor.app.green
-        UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.app.bold18,
-                                                            .foregroundColor: UIColor.app.white]
     }
     
     @IBAction func didTapLoginButton(_ sender: UIButton) {
+        delegate?.loginViewControllerDidTapLoginButton(self)
     }
     
     @IBAction func didTapForgetPasswordButton(_ sender: UIButton) {
+        return
     }
     
     @IBAction func didTapRegisterButton(_ sender: UIButton) {
-        let registerVC = RegisterViewController.instantiate()
-        self.navigationController?.pushViewController(registerVC, animated: true)
+        delegate?.loginViewControllerDidTapRegisterButton(self)
     }
     
 }
 
 
-
-//        registerVC.modalPresentationStyle = .fullScreen
-//        self.present(registerVC, animated: true, completion: nil)

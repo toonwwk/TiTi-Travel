@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fND-aq-whz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OQZ-fl-MeF">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TTZ-0E-Dxh">
-                                <rect key="frame" x="120" y="168" width="150" height="150"/>
+                                <rect key="frame" x="120" y="124" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="bQe-xZ-gHS"/>
                                     <constraint firstAttribute="height" constant="150" id="pS6-hd-sfd"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXJ-Qb-HZt">
-                                <rect key="frame" x="30" y="338" width="330" height="40"/>
+                                <rect key="frame" x="30" y="294" width="330" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRY-jU-okQ" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0U-fd-kEN">
-                                <rect key="frame" x="30" y="398" width="330" height="40"/>
+                                <rect key="frame" x="30" y="354" width="330" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9Z-3W-thd" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -118,14 +118,14 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k7-FI-9SE">
-                                <rect key="frame" x="30" y="518" width="330" height="30"/>
+                                <rect key="frame" x="30" y="474" width="330" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didTapForgetPasswordButton:" destination="OQZ-fl-MeF" eventType="touchUpInside" id="RvP-WU-IFH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-H4-gWJ" customClass="RoundButton" customModule="TiTi_Travel" customModuleProvider="target">
-                                <rect key="frame" x="30" y="458" width="330" height="40"/>
+                                <rect key="frame" x="30" y="414" width="330" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="V2Q-3a-T4E"/>
                                     <constraint firstAttribute="height" constant="40" id="uKL-yw-X2U"/>
@@ -202,24 +202,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgB-oJ-ruX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="639.20000000000005" y="154.27286356821591"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vJl-Rh-KVg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fND-aq-whz" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="upj-y4-Hu1">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="OQZ-fl-MeF" kind="relationship" relationship="rootViewController" id="rVe-Ga-b9E"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1MH-8G-689" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-300" y="154.27286356821591"/>
         </scene>
     </scenes>
     <resources>
