@@ -14,10 +14,10 @@ class BorderView: UIView {
     }
     
     override func didMoveToSuperview() {
-        configureView()
+        commonInit()
     }
     
-    func configureView() {
+    func commonInit() {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.app.white.cgColor
         self.layer.backgroundColor = UIColor.app.clear.cgColor

@@ -14,10 +14,10 @@ class RoundViewWithEffect: UIView {
     }
     
     override func didMoveToSuperview() {
-        configureView()
+        commonInit()
     }
     
-    func configureView() {
+    func commonInit() {
         self.backgroundColor = UIColor.app.white
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.app.gray205.cgColor

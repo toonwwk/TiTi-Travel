@@ -14,10 +14,10 @@ class RoundButton: UIButton {
     }
     
     override func didMoveToSuperview() {
-        configureView()
+        commonInit()
     }
     
-    func configureView() {
+    func commonInit() {
         self.layer.cornerRadius = self.frame.height/2
         self.titleLabel?.font = UIFont.app.bold15
     }

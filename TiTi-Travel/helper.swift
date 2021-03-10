@@ -11,6 +11,10 @@ import UIKit
 extension UIFont {
     
     public struct app {
+        public static var regular10: UIFont {
+            return UIFont(name: R.font.openSans.fontName, size: 10)!
+        }
+        
         public static var regular15: UIFont {
             return UIFont(name: R.font.openSans.fontName, size: 15)!
         }
@@ -58,6 +62,10 @@ extension UIColor {
             return UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1)
         }
         
+        public static var orange: UIColor {
+            return UIColor(red: 249/255, green: 83/255, blue: 53/255, alpha: 1)
+        }
+        
         public static var white: UIColor {
             return UIColor.white
         }
@@ -65,6 +73,17 @@ extension UIColor {
         public static var clear: UIColor {
             return UIColor.clear
         }
+    }
+    
+}
+
+extension UIView {
+    
+    func replace(by subview: UIView) {
+        addSubview(subview)
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[subview]-0-|", options: [], metrics: nil, views: ["subview": subview]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[subview]-0-|", options: [], metrics: nil, views: ["subview": subview]))
     }
     
 }

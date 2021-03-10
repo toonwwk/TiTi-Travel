@@ -16,14 +16,20 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var userPicImageView: UIImageView!
     @IBOutlet weak var addImageButton: UIButton!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var nextButton: RoundButton!
+    @IBOutlet weak var usernameContainerView: UIView!
+    @IBOutlet weak var passwordContainerView: UIView!
+    @IBOutlet weak var firstNameContianerView: UIView!
+    @IBOutlet weak var lastNameContainerView: UIView!
+    @IBOutlet weak var birthdayContainerView: UIView!
     
+    
+    var usernameTextfield: RegisterTextField!
+    var passwordTextfield: RegisterTextField!
+    var firstNameTextfield: RegisterTextField!
+    var lastNameTextfield: RegisterTextField!
+    var birthdayTextfield: RegisterTextField!
+
     weak var delegate: registerViewControllerDelegate?
     
     static func instantiate() -> RegisterViewController {
@@ -47,34 +53,27 @@ class RegisterViewController: UIViewController {
         addImageButton.titleLabel?.font = UIFont.app.semibold15
         backgroundView.backgroundColor = UIColor.app.white
         userPicImageView.image = R.image.iconUserImage()
-        nameLabel.textColor = UIColor.app.green
-        nameLabel.font = UIFont.app.semibold15
-        nameLabel.text = "Name"
-        lastNameLabel.textColor = UIColor.app.green
-        lastNameLabel.font = UIFont.app.semibold15
-        lastNameLabel.text = "Last Name"
-        ageLabel.textColor = UIColor.app.green
-        ageLabel.font = UIFont.app.semibold15
-        ageLabel.text = "Age"
-        nameTextField.borderStyle = .none
-        nameTextField.font = UIFont.app.regular15
-        nameTextField.textColor = UIColor.app.green
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
-        nameTextField.tintColor = UIColor.app.gray205
-        lastNameTextField.borderStyle = .none
-        lastNameTextField.font = UIFont.app.regular15
-        lastNameTextField.textColor = UIColor.app.green
-        lastNameTextField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
-        lastNameTextField.tintColor = UIColor.app.gray205
-        ageTextField.borderStyle = .none
-        ageTextField.placeholder = "Age"
-        ageTextField.font = UIFont.app.regular15
-        ageTextField.textColor = UIColor.app.green
-        ageTextField.attributedPlaceholder = NSAttributedString(string: "Age", attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
-        ageTextField.tintColor = UIColor.app.gray205
         nextButton.setTitle("Next", for: .normal)
         nextButton.setTitleColor(UIColor.app.white, for: .normal)
         nextButton.backgroundColor = UIColor.app.green
+        
+        usernameTextfield = R.nib.registerTextField(owner: self)
+        passwordTextfield = R.nib.registerTextField(owner: self)
+        firstNameTextfield = R.nib.registerTextField(owner: self)
+        lastNameTextfield = R.nib.registerTextField(owner: self)
+        birthdayTextfield = R.nib.registerTextField(owner: self)
+        
+        usernameTextfield.configureView(with: "Username")
+        passwordTextfield.configureView(with: "Password")
+        firstNameTextfield.configureView(with: "First Name")
+        lastNameTextfield.configureView(with: "Last Name")
+        birthdayTextfield.configureView(with: "Birthday")
+        
+        usernameContainerView.replace(by: usernameTextfield)
+        passwordContainerView.replace(by: passwordTextfield)
+        firstNameContianerView.replace(by: firstNameTextfield)
+        lastNameContainerView.replace(by: lastNameTextfield)
+        birthdayContainerView.replace(by: birthdayTextfield)
     }
     
     func configureNavigationBar() {

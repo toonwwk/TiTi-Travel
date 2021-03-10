@@ -14,10 +14,10 @@ class LineView: UIView {
     }
     
     override func didMoveToSuperview() {
-        configureView()
+        commonInit()
     }
     
-    func configureView() {
+    func commonInit() {
         self.backgroundColor = UIColor.app.gray205
     }
     
