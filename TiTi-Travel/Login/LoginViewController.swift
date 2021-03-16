@@ -56,6 +56,7 @@ class LoginViewController: UIViewController {
         usernameTextField.borderStyle = .none
         usernameTextField.tintColor = UIColor.app.gray205
         usernameTextField.textColor = UIColor.app.white
+        usernameTextField.delegate = self
         usernameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
         usernameTextField.font = UIFont.app.regular15
         passwordTextField.borderStyle = .none
@@ -64,6 +65,7 @@ class LoginViewController: UIViewController {
         passwordTextField.placeholder = "password"
         passwordTextField.font = UIFont.app.regular15
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
+        passwordTextField.delegate = self
         registerLabel.text = "Do not have an account?"
         registerLabel.font = UIFont.app.regular15
         registerLabel.textColor = UIColor.app.white
@@ -92,4 +94,11 @@ class LoginViewController: UIViewController {
     
 }
 
-
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+}

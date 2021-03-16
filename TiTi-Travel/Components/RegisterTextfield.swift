@@ -19,6 +19,7 @@ class RegisterTextField: UIView {
     }
     
     func configureView(with text: String) {
+        backgroundColor = UIColor.app.white
         leftLabel.textColor = UIColor.app.green
         leftLabel.font = UIFont.app.semibold15
         textField.borderStyle = .none
@@ -30,5 +31,40 @@ class RegisterTextField: UIView {
         errorLabel.text = ""
         leftLabel.text = text
         textField.attributedPlaceholder = NSAttributedString(string: text.lowercased(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
+        textField.delegate = self
     }
+    
+    func addDatePicker() {
+        self.textField.datePicker(target: self,
+                                  doneAction: #selector(doneAction),
+                                  cancelAction: #selector(cancelAction),
+                                  datePickerMode: .date)
+    }
+    
+    @objc
+    private func cancelAction() {
+        textField.resignFirstResponder()
+    }
+    
+    @objc
+    private func doneAction() {
+        if let datePickerView = self.textField.inputView as? UIDatePicker {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM-dd-yyyy"
+            let dateString = dateFormatter.string(from: datePickerView.date)
+            self.textField.text = dateString
+            self.textField.resignFirstResponder()
+        }
+    }
+    
+}
+
+// MARK:- UITextFieldDelegate
+extension RegisterTextField: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return false
+    }
+    
 }

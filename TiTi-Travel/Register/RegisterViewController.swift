@@ -68,6 +68,7 @@ class RegisterViewController: UIViewController {
         firstNameTextfield.configureView(with: "First Name")
         lastNameTextfield.configureView(with: "Last Name")
         birthdayTextfield.configureView(with: "Birthday")
+        birthdayTextfield.addDatePicker()
         
         usernameContainerView.replace(by: usernameTextfield)
         passwordContainerView.replace(by: passwordTextfield)

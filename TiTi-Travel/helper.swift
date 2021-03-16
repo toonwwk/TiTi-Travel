@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK-: Font
+// MARK:- Font
 extension UIFont {
     
     public struct app {
@@ -38,7 +38,7 @@ extension UIFont {
     
 }
 
-// MARK-: Color
+// MARK:- Color
 extension UIColor {
     
     public struct app {
@@ -77,6 +77,7 @@ extension UIColor {
     
 }
 
+// MARK:- View
 extension UIView {
     
     func replace(by subview: UIView) {
@@ -86,4 +87,30 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[subview]-0-|", options: [], metrics: nil, views: ["subview": subview]))
     }
     
+}
+
+// MARK:- Tetxtfield
+extension UITextField {
+    func datePicker<T>(target: T,
+                       doneAction: Selector,
+                       cancelAction: Selector,
+                       datePickerMode: UIDatePicker.Mode = .date) {
+        let screenWidth = UIScreen.main.bounds.width
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: target, action: cancelAction)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: target, action: doneAction)
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
+        
+        doneButton.tintColor = UIColor.app.white
+        cancelButton.tintColor = UIColor.app.white
+        datePicker.datePickerMode = datePickerMode
+        toolBar.setItems([cancelButton, flexibleSpace, doneButton],animated: true)
+        inputView = datePicker
+        inputAccessoryView = toolBar
+
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+    }
 }
