@@ -14,6 +14,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDe
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var filterButton: RoundButton!
+    @IBOutlet weak var relocateButton: RoundButton!
     
     let locationManager = CLLocationManager()
     let authorizationStatus = CLLocationManager.authorizationStatus()
@@ -51,6 +53,15 @@ class MapViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDe
         searchLabel.font = UIFont.app.regular15
         searchLabel.textColor = UIColor.app.gray192
         searchLabel.text = "search here"
+        relocateButton.setImage(R.image.iconCenterLocation()?.withRenderingMode(.alwaysOriginal), for: .normal)
+        relocateButton.backgroundColor = UIColor.app.green
+        relocateButton.setTitle("", for: .normal)
+        filterButton.backgroundColor = UIColor.app.white
+        filterButton.setImage(R.image.iconFilter()?.withRenderingMode(.alwaysOriginal), for: .normal)
+        filterButton.setTitle("filter", for: .normal)
+        filterButton.titleLabel?.font = UIFont.app.regular12
+        filterButton.setTitleColor(UIColor.app.green, for: .normal)
+        filterButton.semanticContentAttribute = .forceRightToLeft
         mapView.showsUserLocation = true
         mapView.delegate = self
         locationManager.delegate = self
@@ -81,6 +92,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDe
     }
     
     @objc func didTapSideBarIcon() {
+        
+    }
+    
+    @IBAction func didTapFilterButton(_ sender: RoundButton) {
+        
+    }
+    
+    @IBAction func didTapRelocation(_ sender: RoundButton) {
         
     }
     

@@ -14,6 +14,7 @@ class LineView: UIView {
     }
     
     override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         commonInit()
     }
     

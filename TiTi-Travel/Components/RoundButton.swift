@@ -14,12 +14,16 @@ class RoundButton: UIButton {
     }
     
     override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         commonInit()
     }
     
     func commonInit() {
         self.layer.cornerRadius = self.frame.height/2
         self.titleLabel?.font = UIFont.app.bold15
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 40).cgPath
+        self.layer.shadowOpacity = 0.25
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
     }
     
 }

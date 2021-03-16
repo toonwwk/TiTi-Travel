@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sio-VU-mml">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sio-VU-mml">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,21 +50,49 @@
                                     <constraint firstItem="BJa-rA-R8B" firstAttribute="centerY" secondItem="whW-5z-X9g" secondAttribute="centerY" id="fdg-4R-Vwd"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-VP-oht" customClass="RoundButton" customModule="TiTi_Travel" customModuleProvider="target">
+                                <rect key="frame" x="324" y="109" width="75" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="q0X-zb-ABe"/>
+                                    <constraint firstAttribute="height" constant="25" id="yNX-xK-0yp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapFilterButton:" destination="Sio-VU-mml" eventType="touchUpInside" id="WOT-ix-Vam"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuY-oS-iMI" customClass="RoundButton" customModule="TiTi_Travel" customModuleProvider="target">
+                                <rect key="frame" x="349" y="712" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Afw-r6-xsO"/>
+                                    <constraint firstAttribute="width" constant="50" id="JdT-S9-hkn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapRelocation:" destination="Sio-VU-mml" eventType="touchUpInside" id="cx7-6x-NHt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Mf-et-8eN"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="4Mf-et-8eN" firstAttribute="bottom" secondItem="MuY-oS-iMI" secondAttribute="bottom" constant="100" id="0ca-vZ-uqr"/>
                             <constraint firstItem="whW-5z-X9g" firstAttribute="top" secondItem="4Mf-et-8eN" secondAttribute="top" constant="15" id="30N-uR-VlR"/>
                             <constraint firstAttribute="bottom" secondItem="s7D-hE-AiT" secondAttribute="bottom" id="7ie-uw-Mbc"/>
                             <constraint firstItem="s7D-hE-AiT" firstAttribute="top" secondItem="4Mf-et-8eN" secondAttribute="top" id="A5x-ZO-3ev"/>
+                            <constraint firstItem="4Mf-et-8eN" firstAttribute="trailing" secondItem="MuY-oS-iMI" secondAttribute="trailing" constant="15" id="bmo-AU-9JZ"/>
                             <constraint firstItem="s7D-hE-AiT" firstAttribute="leading" secondItem="iZR-fk-6DV" secondAttribute="leading" id="ds0-DU-GEz"/>
                             <constraint firstItem="4Mf-et-8eN" firstAttribute="trailing" secondItem="whW-5z-X9g" secondAttribute="trailing" constant="15" id="icv-QL-7gn"/>
+                            <constraint firstItem="2Bf-VP-oht" firstAttribute="top" secondItem="whW-5z-X9g" secondAttribute="bottom" constant="10" id="qWP-2K-Sbv"/>
+                            <constraint firstItem="4Mf-et-8eN" firstAttribute="trailing" secondItem="2Bf-VP-oht" secondAttribute="trailing" constant="15" id="toC-Q2-gPK"/>
                             <constraint firstAttribute="trailing" secondItem="s7D-hE-AiT" secondAttribute="trailing" id="ulD-VU-vDr"/>
                             <constraint firstItem="whW-5z-X9g" firstAttribute="leading" secondItem="4Mf-et-8eN" secondAttribute="leading" constant="15" id="w9v-Jx-om5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="filterButton" destination="2Bf-VP-oht" id="zAt-H3-MCs"/>
                         <outlet property="mapView" destination="s7D-hE-AiT" id="Hik-W9-a0Z"/>
+                        <outlet property="relocateButton" destination="MuY-oS-iMI" id="0pW-Ya-dOn"/>
                         <outlet property="searchBarView" destination="whW-5z-X9g" id="HZd-fC-5hE"/>
                         <outlet property="searchImageView" destination="f9Z-8C-qK3" id="bAB-Pg-Piz"/>
                         <outlet property="searchLabel" destination="BJa-rA-R8B" id="2Tg-fR-AAL"/>

@@ -14,6 +14,7 @@ class RoundViewWithEffect: UIView {
     }
     
     override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         commonInit()
     }
     

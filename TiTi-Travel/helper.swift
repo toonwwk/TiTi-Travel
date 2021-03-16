@@ -31,6 +31,10 @@ extension UIFont {
             return UIFont(name: R.font.openSans.fontName, size: 13)!
         }
         
+        public static var regular12: UIFont {
+            return UIFont(name: R.font.openSans.fontName, size: 12)!
+        }
+        
         public static var bold18: UIFont {
             return UIFont(name: R.font.openSansBold.fontName, size: 18)!
         }
@@ -102,8 +106,8 @@ extension UITextField {
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
         
-        doneButton.tintColor = UIColor.app.white
-        cancelButton.tintColor = UIColor.app.white
+        doneButton.tintColor = UIColor.app.green
+        cancelButton.tintColor = UIColor.app.green
         datePicker.datePickerMode = datePickerMode
         toolBar.setItems([cancelButton, flexibleSpace, doneButton],animated: true)
         inputView = datePicker
@@ -112,5 +116,16 @@ extension UITextField {
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
+    }
+}
+
+//MARK:- UIButton
+extension UIButton {
+    func moveImageLeftTextCenter(imagePadding: CGFloat = 30.0){
+        guard let imageViewWidth = self.imageView?.frame.width else{return}
+        guard let titleLabelWidth = self.titleLabel?.intrinsicContentSize.width else{return}
+        self.contentHorizontalAlignment = .left
+        imageEdgeInsets = UIEdgeInsets(top: 0.0, left: imagePadding - imageViewWidth / 2, bottom: 0.0, right: 0.0)
+        titleEdgeInsets = UIEdgeInsets(top: 0.0, left: (bounds.width - titleLabelWidth) / 2 - imageViewWidth, bottom: 0.0, right: 0.0)
     }
 }

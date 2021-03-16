@@ -14,6 +14,7 @@ class BorderView: UIView {
     }
     
     override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         commonInit()
     }
     

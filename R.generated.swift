@@ -221,10 +221,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `icon-app`.
     static let iconApp = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-app")
+    /// Image `icon-center-location`.
+    static let iconCenterLocation = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-center-location")
+    /// Image `icon-filter`.
+    static let iconFilter = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-filter")
     /// Image `icon-nav-bar-logo`.
     static let iconNavBarLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-nav-bar-logo")
     /// Image `icon-password`.
@@ -242,6 +246,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "icon-app", bundle: ..., traitCollection: ...)`
     static func iconApp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.iconApp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon-center-location", bundle: ..., traitCollection: ...)`
+    static func iconCenterLocation(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconCenterLocation, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon-filter", bundle: ..., traitCollection: ...)`
+    static func iconFilter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconFilter, compatibleWith: traitCollection)
     }
     #endif
 
