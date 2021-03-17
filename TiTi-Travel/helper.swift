@@ -109,6 +109,7 @@ extension UITextField {
         doneButton.tintColor = UIColor.app.green
         cancelButton.tintColor = UIColor.app.green
         datePicker.datePickerMode = datePickerMode
+        datePicker.set5YearValidation()
         toolBar.setItems([cancelButton, flexibleSpace, doneButton],animated: true)
         inputView = datePicker
         inputAccessoryView = toolBar
@@ -119,6 +120,22 @@ extension UITextField {
     }
 }
 
+//MARK:- UIDatePicker
+extension UIDatePicker {
+    func set5YearValidation() {
+        let currentDate: Date = Date()
+        var calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        var components: DateComponents = DateComponents()
+        components.calendar = calendar
+        components.year = -5
+        let maxDate: Date = calendar.date(byAdding: components, to: currentDate)!
+        components.year = -120
+        let minDate: Date = calendar.date(byAdding: components, to: currentDate)!
+        self.minimumDate = minDate
+        self.maximumDate = maxDate
+    } }
+
 //MARK:- UIButton
 extension UIButton {
     func moveImageLeftTextCenter(imagePadding: CGFloat = 30.0){
@@ -128,4 +145,27 @@ extension UIButton {
         imageEdgeInsets = UIEdgeInsets(top: 0.0, left: imagePadding - imageViewWidth / 2, bottom: 0.0, right: 0.0)
         titleEdgeInsets = UIEdgeInsets(top: 0.0, left: (bounds.width - titleLabelWidth) / 2 - imageViewWidth, bottom: 0.0, right: 0.0)
     }
+}
+
+//MARK:- String
+extension String {
+    func titlecased() -> String {
+        return self.replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression, range: self.range(of: self))
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .capitalized
+    }
+    
+    func validate(with regEx: String) -> Bool {
+        let stringChecker = NSPredicate(format:"SELF MATCHES[c] %@", regEx)
+        return stringChecker.evaluate(with: self)
+    }
+    
+    func hasSpecialCharacter() -> Bool {
+        return validate(with: ".*[^A-Za-z0-9-_].*")
+    }
+    
+    func hasOnlyAlphabet() -> Bool {
+        return validate(with: ".*[^A-Za-z].*")
+    }
+    
 }

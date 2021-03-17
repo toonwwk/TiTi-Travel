@@ -30,11 +30,12 @@
 		C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10125D986E600FCADAC /* LoginViewController.swift */; };
 		C896E10925D98B0600FCADAC /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10825D98B0600FCADAC /* BorderView.swift */; };
 		C896E10C25D991C400FCADAC /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896E10B25D991C400FCADAC /* helper.swift */; };
+		C8E263B02600C49D008AEDC3 /* RegisterTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E263AF2600C49D008AEDC3 /* RegisterTextFieldViewModel.swift */; };
 		C8E2BADA25E3BDED00AD1D00 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAD925E3BDED00AD1D00 /* ApplicationCoordinator.swift */; };
 		C8E2BADE25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */; };
 		C8E2BAE225E3F94500AD1D00 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAE125E3F94500AD1D00 /* MapCoordinator.swift */; };
 		C8E3AA7D25F948AD006AFFA0 /* RegisterTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E3AA7C25F948AD006AFFA0 /* RegisterTextField.xib */; };
-		C8E3AA8125F94C58006AFFA0 /* RegisterTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3AA8025F94C58006AFFA0 /* RegisterTextfield.swift */; };
+		C8E3AA8125F94C58006AFFA0 /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3AA8025F94C58006AFFA0 /* RegisterTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,11 +66,12 @@
 		C896E10125D986E600FCADAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C896E10825D98B0600FCADAC /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		C896E10B25D991C400FCADAC /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		C8E263AF2600C49D008AEDC3 /* RegisterTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextFieldViewModel.swift; sourceTree = "<group>"; };
 		C8E2BAD925E3BDED00AD1D00 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		C8E2BAE125E3F94500AD1D00 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		C8E3AA7C25F948AD006AFFA0 /* RegisterTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterTextField.xib; sourceTree = "<group>"; };
-		C8E3AA8025F94C58006AFFA0 /* RegisterTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextfield.swift; sourceTree = "<group>"; };
+		C8E3AA8025F94C58006AFFA0 /* RegisterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +129,6 @@
 				C896E10825D98B0600FCADAC /* BorderView.swift */,
 				C864856625E0009400DE71F0 /* LineView.swift */,
 				C864856C25E001DC00DE71F0 /* RoundViewWithEffect.swift */,
-				C8E3AA7C25F948AD006AFFA0 /* RegisterTextField.xib */,
-				C8E3AA8025F94C58006AFFA0 /* RegisterTextfield.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -136,6 +136,7 @@
 		C87EF96A25DC5B9800DD0C34 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				C8E263AD2600C46E008AEDC3 /* Textfield */,
 				C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */,
 				C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */,
 			);
@@ -189,6 +190,16 @@
 				C83E1FD525DAEE6200B5009E /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C8E263AD2600C46E008AEDC3 /* Textfield */ = {
+			isa = PBXGroup;
+			children = (
+				C8E3AA7C25F948AD006AFFA0 /* RegisterTextField.xib */,
+				C8E3AA8025F94C58006AFFA0 /* RegisterTextField.swift */,
+				C8E263AF2600C49D008AEDC3 /* RegisterTextFieldViewModel.swift */,
+			);
+			path = Textfield;
 			sourceTree = "<group>";
 		};
 		C8E2BAD825E3BDCD00AD1D00 /* Coordinator */ = {
@@ -358,7 +369,8 @@
 				C896E10925D98B0600FCADAC /* BorderView.swift in Sources */,
 				C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */,
 				C85893D825E1220B00412063 /* MapViewControllerViewModel.swift in Sources */,
-				C8E3AA8125F94C58006AFFA0 /* RegisterTextfield.swift in Sources */,
+				C8E263B02600C49D008AEDC3 /* RegisterTextFieldViewModel.swift in Sources */,
+				C8E3AA8125F94C58006AFFA0 /* RegisterTextField.swift in Sources */,
 				C83E1FEA25DAF8A400B5009E /* Service.swift in Sources */,
 				C8E2BADE25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift in Sources */,
 				C8E2BAE225E3F94500AD1D00 /* MapCoordinator.swift in Sources */,

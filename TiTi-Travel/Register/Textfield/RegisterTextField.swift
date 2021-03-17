@@ -7,18 +7,35 @@
 
 import UIKit
 
+enum RegisterTextFieldType: String, CaseIterable {
+    case username
+    case password
+    case firstName
+    case lastName
+    case birthDay
+}
+
 class RegisterTextField: UIView {
-    
+        
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
-    
-    
+
+    var isValid = false
+
+    private var textFieldType: RegisterTextFieldType!
+    private var viewModel = RegisterTextFieldViewModel()
+
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configureView(with text: String) {
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        commonInit()
+    }
+    
+    func commonInit(){
         backgroundColor = UIColor.app.white
         leftLabel.textColor = UIColor.app.green
         leftLabel.font = UIFont.app.semibold15
@@ -26,15 +43,29 @@ class RegisterTextField: UIView {
         textField.font = UIFont.app.regular15
         textField.textColor = UIColor.app.green
         textField.tintColor = UIColor.app.gray205
+        textField.delegate = self
         errorLabel.textColor = UIColor.app.orange
         errorLabel.font = UIFont.app.regular10
         errorLabel.text = ""
-        leftLabel.text = text
-        textField.attributedPlaceholder = NSAttributedString(string: text.lowercased(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
-        textField.delegate = self
     }
     
-    func addDatePicker() {
+    func configureView(with type: RegisterTextFieldType) {
+        self.tag = RegisterTextFieldType.allCases.firstIndex(of: type) ?? 99
+        textFieldType = type
+        leftLabel.text = type.rawValue.titlecased()
+        textField.attributedPlaceholder = NSAttributedString(string: type.rawValue.titlecased(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
+        
+        if(type == .birthDay) {
+            addDatePicker()
+        }
+        
+    }
+    
+    func startEditing() {
+        textField.becomeFirstResponder()
+    }
+    
+    private func addDatePicker() {
         self.textField.datePicker(target: self,
                                   doneAction: #selector(doneAction),
                                   cancelAction: #selector(cancelAction),
@@ -63,8 +94,18 @@ class RegisterTextField: UIView {
 extension RegisterTextField: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.endEditing(true)
+        if let nextField = self.superview?.superview?.viewWithTag(self.tag + 1) as? RegisterTextField {
+           nextField.startEditing()
+        } else { 
+           textField.resignFirstResponder()
+        }
         return false
+     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let (result, errorMessage) = viewModel.validate(textField.text ?? "", with: textFieldType)
+        isValid = result
+        errorLabel.text = errorMessage
     }
     
 }

@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController {
         configureNavigationBar()
     }
     
-    func commonInit() {
+    private func commonInit() {
         addImageButton.setTitle("Add Profile Photo", for: .normal)
         addImageButton.setTitleColor(UIColor.app.green, for: .normal)
         addImageButton.titleLabel?.font = UIFont.app.semibold15
@@ -63,12 +63,11 @@ class RegisterViewController: UIViewController {
         lastNameTextfield = R.nib.registerTextField(owner: self)
         birthdayTextfield = R.nib.registerTextField(owner: self)
         
-        usernameTextfield.configureView(with: "Username")
-        passwordTextfield.configureView(with: "Password")
-        firstNameTextfield.configureView(with: "First Name")
-        lastNameTextfield.configureView(with: "Last Name")
-        birthdayTextfield.configureView(with: "Birthday")
-        birthdayTextfield.addDatePicker()
+        usernameTextfield.configureView(with: .username)
+        passwordTextfield.configureView(with: .password)
+        firstNameTextfield.configureView(with: .firstName)
+        lastNameTextfield.configureView(with: .lastName)
+        birthdayTextfield.configureView(with: .birthDay)
         
         usernameContainerView.replace(by: usernameTextfield)
         passwordContainerView.replace(by: passwordTextfield)
@@ -77,7 +76,7 @@ class RegisterViewController: UIViewController {
         birthdayContainerView.replace(by: birthdayTextfield)
     }
     
-    func configureNavigationBar() {
+    private func configureNavigationBar() {
         navigationItem.title = "Sign Up"
     }
 
