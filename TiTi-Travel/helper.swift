@@ -95,6 +95,7 @@ extension UIView {
 
 // MARK:- Tetxtfield
 extension UITextField {
+    
     func datePicker<T>(target: T,
                        doneAction: Selector,
                        cancelAction: Selector,
@@ -118,10 +119,12 @@ extension UITextField {
             datePicker.preferredDatePickerStyle = .wheels
         }
     }
+    
 }
 
 //MARK:- UIDatePicker
 extension UIDatePicker {
+    
     func set5YearValidation() {
         let currentDate: Date = Date()
         var calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
@@ -134,7 +137,9 @@ extension UIDatePicker {
         let minDate: Date = calendar.date(byAdding: components, to: currentDate)!
         self.minimumDate = minDate
         self.maximumDate = maxDate
-    } }
+    }
+    
+}
 
 //MARK:- UIButton
 extension UIButton {
@@ -149,6 +154,7 @@ extension UIButton {
 
 //MARK:- String
 extension String {
+    
     func titlecased() -> String {
         return self.replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression, range: self.range(of: self))
             .trimmingCharacters(in: .whitespacesAndNewlines)
@@ -166,6 +172,10 @@ extension String {
     
     func hasOnlyAlphabet() -> Bool {
         return validate(with: ".*[^A-Za-z].*")
+    }
+    
+    func hasWhiteSpace() -> Bool {
+        return validate(with: ".*[\\s].*")
     }
     
 }

@@ -37,6 +37,9 @@
                                     <constraint firstAttribute="height" constant="25" id="kRe-g7-BGN"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapUploadImageButton:" destination="3XF-iQ-SMn" eventType="touchUpInside" id="tpO-2l-81F"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-Sj-eDx">
                                 <rect key="frame" x="30" y="235.5" width="315" height="255"/>

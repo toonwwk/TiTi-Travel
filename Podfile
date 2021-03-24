@@ -9,5 +9,5 @@ target 'TiTi-Travel' do
     pod 'IQKeyboardManagerSwift'
     pod 'R.swift'
     pod 'SWRevealViewController'
-
+    pod 'EzPopup'
 end

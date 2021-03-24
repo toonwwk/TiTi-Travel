@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EzPopup
 
 protocol  LoginViewControllerDelegate: AnyObject {
     func loginViewControllerDidTapRegisterButton(_ loginViewController: LoginViewController)
@@ -25,6 +26,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerLabel: UILabel!
     @IBOutlet weak var registerButton: RoundButton!
 
+    private var  screenSize = UIScreen.main.bounds
     weak var delegate: LoginViewControllerDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,12 +45,8 @@ class LoginViewController: UIViewController {
     }
     
     func commonInit() {
-        backgroundView.backgroundColor = UIColor.app.green
-        iconAppImageView.image = R.image.iconApp()
-        iconUserImageView.image = R.image.iconUsername()
-        iconPasswordImageView.image = R.image.iconPassword()
-        loginButton.backgroundColor = UIColor.app.white
         loginButton.setTitle("Sign In", for: .normal)
+        loginButton.backgroundColor = UIColor.app.white
         loginButton.setTitleColor(UIColor.app.green, for: .normal)
         forgetPasswordButton.setTitle("Forget password?", for: .normal)
         forgetPasswordButton.setTitleColor(UIColor.app.white, for: .normal)
@@ -73,6 +71,10 @@ class LoginViewController: UIViewController {
         registerButton.setTitleColor(UIColor.app.brown, for: .normal)
         registerButton.titleLabel?.attributedText = NSAttributedString(string: "Sign Up", attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
         registerButton.setTitle(" Sign Up", for: .normal)
+        backgroundView.backgroundColor = UIColor.app.green
+        iconAppImageView.image = R.image.iconApp()
+        iconUserImageView.image = R.image.iconUsername()
+        iconPasswordImageView.image = R.image.iconPassword()
     }
     
     func configureNavigationBar() {
@@ -81,6 +83,15 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapLoginButton(_ sender: UIButton) {
+//        let errorPopUpController = ErrorPopupViewController()
+//        let popupVC = PopupViewController(contentController: errorPopUpController, popupWidth: screenSize.width - 60, popupHeight: 260)
+//        popupVC.canTapOutsideToDismiss = true
+//        popupVC.cornerRadius = 10
+//        popupVC.shadowEnabled = true
+//        errorPopUpController.transitioningDelegate = self
+//        errorPopUpController.modalPresentationStyle = .formSheet
+//        present(popupVC, animated: true, completion: nil)
+//        errorPopUpController.configure(with: "Error I sus")
         delegate?.loginViewControllerDidTapLoginButton(self)
     }
     
@@ -100,5 +111,9 @@ extension LoginViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+    
+}
+
+extension LoginViewController: UIViewControllerTransitioningDelegate {
     
 }

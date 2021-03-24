@@ -15,7 +15,7 @@ enum RegisterTextFieldType: String, CaseIterable {
     case birthDay
 }
 
-class RegisterTextField: UIView {
+class RegisterTextFieldController: UIView {
         
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -91,10 +91,10 @@ class RegisterTextField: UIView {
 }
 
 // MARK:- UITextFieldDelegate
-extension RegisterTextField: UITextFieldDelegate {
+extension RegisterTextFieldController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = self.superview?.superview?.viewWithTag(self.tag + 1) as? RegisterTextField {
+        if let nextField = self.superview?.superview?.viewWithTag(self.tag + 1) as? RegisterTextFieldController {
            nextField.startEditing()
         } else { 
            textField.resignFirstResponder()

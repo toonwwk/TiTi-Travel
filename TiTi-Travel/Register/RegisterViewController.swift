@@ -12,7 +12,6 @@ protocol registerViewControllerDelegate: AnyObject {
 }
 
 class RegisterViewController: UIViewController {
-    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var userPicImageView: UIImageView!
     @IBOutlet weak var addImageButton: UIButton!
@@ -23,12 +22,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lastNameContainerView: UIView!
     @IBOutlet weak var birthdayContainerView: UIView!
     
+    let imagePicker = UIImagePickerController()
     
-    var usernameTextfield: RegisterTextField!
-    var passwordTextfield: RegisterTextField!
-    var firstNameTextfield: RegisterTextField!
-    var lastNameTextfield: RegisterTextField!
-    var birthdayTextfield: RegisterTextField!
+    var usernameTextfield: RegisterTextFieldController!
+    var passwordTextfield: RegisterTextFieldController!
+    var firstNameTextfield: RegisterTextFieldController!
+    var lastNameTextfield: RegisterTextFieldController!
+    var birthdayTextfield: RegisterTextFieldController!
 
     weak var delegate: registerViewControllerDelegate?
     
@@ -74,13 +74,37 @@ class RegisterViewController: UIViewController {
         firstNameContianerView.replace(by: firstNameTextfield)
         lastNameContainerView.replace(by: lastNameTextfield)
         birthdayContainerView.replace(by: birthdayTextfield)
+        
+        userPicImageView.layer.masksToBounds = false
+        userPicImageView.layer.cornerRadius = userPicImageView.frame.width / 2
+        userPicImageView.clipsToBounds = true
+        userPicImageView.contentMode = .scaleAspectFill
+        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
     }
     
     private func configureNavigationBar() {
         navigationItem.title = "Sign Up"
     }
 
-    @IBAction func didTapNextButton(_ sender: Any) {
+    @IBAction func didTapUploadImageButton(_ sender: UIButton) {
+          present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapNextButton(_ sender: RoundButton) {
         delegate?.registerViewControllerDidTapNextButton(self)
     }
+}
+
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            userPicImageView.image = image
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

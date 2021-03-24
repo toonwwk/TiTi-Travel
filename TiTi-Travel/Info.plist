@@ -70,5 +70,9 @@
 		<string>OpenSansRegular.ttf</string>
 		<string>OpenSansSemibold.ttf</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>TiTi Travel wants to access your camera</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>TiTi Travel to access your photos</string>
 </dict>
 </plist>

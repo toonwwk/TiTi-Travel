@@ -221,12 +221,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
     /// Image `icon-app`.
     static let iconApp = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-app")
     /// Image `icon-center-location`.
     static let iconCenterLocation = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-center-location")
+    /// Image `icon-error`.
+    static let iconError = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-error")
     /// Image `icon-filter`.
     static let iconFilter = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon-filter")
     /// Image `icon-nav-bar-logo`.
@@ -253,6 +255,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "icon-center-location", bundle: ..., traitCollection: ...)`
     static func iconCenterLocation(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.iconCenterLocation, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon-error", bundle: ..., traitCollection: ...)`
+    static func iconError(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconError, compatibleWith: traitCollection)
     }
     #endif
 
@@ -338,10 +347,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `ErrorPopupViewController`.
+    static let errorPopupViewController = _R.nib._ErrorPopupViewController()
     /// Nib `RegisterTextField`.
     static let registerTextField = _R.nib._RegisterTextField()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ErrorPopupViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.errorPopupViewController) instead")
+    static func errorPopupViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.errorPopupViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "RegisterTextField", in: bundle)`
@@ -351,8 +370,12 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    static func registerTextField(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RegisterTextField? {
-      return R.nib.registerTextField.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RegisterTextField
+    static func errorPopupViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.errorPopupViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func registerTextField(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RegisterTextFieldController? {
+      return R.nib.registerTextField.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RegisterTextFieldController
     }
 
     fileprivate init() {}
@@ -380,12 +403,23 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _ErrorPopupViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ErrorPopupViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _RegisterTextField: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "RegisterTextField"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RegisterTextField? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RegisterTextField
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RegisterTextFieldController? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RegisterTextFieldController
       }
 
       fileprivate init() {}

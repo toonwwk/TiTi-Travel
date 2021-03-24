@@ -1,4 +1,5 @@
 PODS:
+  - EzPopup (1.2)
   - IQKeyboardManagerSwift (6.5.6)
   - R.swift (5.4.0):
     - R.swift.Library (~> 5.3.0)
@@ -12,6 +13,7 @@ PODS:
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
+  - EzPopup
   - IQKeyboardManagerSwift
   - R.swift
   - RxCocoa (= 6.1.0)
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - EzPopup
     - IQKeyboardManagerSwift
     - R.swift
     - R.swift.Library
@@ -29,6 +32,7 @@ SPEC REPOS:
     - SWRevealViewController
 
 SPEC CHECKSUMS:
+  EzPopup: 989ac21992a82ad6d1245c747a78bf3833279ef0
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
@@ -37,6 +41,6 @@ SPEC CHECKSUMS:
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: ef1392c1af284ee1a54afbcaeb0822e354be9669
+PODFILE CHECKSUM: cc062dcdf772a558a2441fed706cd15a4b5c56f8
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

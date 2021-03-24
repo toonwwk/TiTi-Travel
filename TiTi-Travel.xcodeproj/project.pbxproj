@@ -19,6 +19,8 @@
 		C864856225DFE83C00DE71F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864856125DFE83C00DE71F0 /* MapViewController.swift */; };
 		C864856725E0009400DE71F0 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864856625E0009400DE71F0 /* LineView.swift */; };
 		C864856D25E001DC00DE71F0 /* RoundViewWithEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864856C25E001DC00DE71F0 /* RoundViewWithEffect.swift */; };
+		C8682394260B36AC0013FB18 /* ErrorPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8682393260B36AC0013FB18 /* ErrorPopupViewController.xib */; };
+		C8682397260B36BB0013FB18 /* ErrorPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8682396260B36BB0013FB18 /* ErrorPopupViewController.swift */; };
 		C87EF96C25DC5BB800DD0C34 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */; };
 		C87EF96F25DC5C5C00DD0C34 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */; };
 		C87EF98125DC61B600DD0C34 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87EF98025DC61B600DD0C34 /* R.generated.swift */; };
@@ -35,7 +37,7 @@
 		C8E2BADE25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */; };
 		C8E2BAE225E3F94500AD1D00 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAE125E3F94500AD1D00 /* MapCoordinator.swift */; };
 		C8E3AA7D25F948AD006AFFA0 /* RegisterTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8E3AA7C25F948AD006AFFA0 /* RegisterTextField.xib */; };
-		C8E3AA8125F94C58006AFFA0 /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3AA8025F94C58006AFFA0 /* RegisterTextField.swift */; };
+		C8E3AA8125F94C58006AFFA0 /* RegisterTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3AA8025F94C58006AFFA0 /* RegisterTextFieldController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		C864856125DFE83C00DE71F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C864856625E0009400DE71F0 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		C864856C25E001DC00DE71F0 /* RoundViewWithEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewWithEffect.swift; sourceTree = "<group>"; };
+		C8682393260B36AC0013FB18 /* ErrorPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorPopupViewController.xib; sourceTree = "<group>"; };
+		C8682396260B36BB0013FB18 /* ErrorPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPopupViewController.swift; sourceTree = "<group>"; };
 		C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C87EF98025DC61B600DD0C34 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -71,7 +75,7 @@
 		C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		C8E2BAE125E3F94500AD1D00 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		C8E3AA7C25F948AD006AFFA0 /* RegisterTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterTextField.xib; sourceTree = "<group>"; };
-		C8E3AA8025F94C58006AFFA0 /* RegisterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
+		C8E3AA8025F94C58006AFFA0 /* RegisterTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextFieldController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		C864856B25E001AB00DE71F0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C8C1CBB32609C23D00A15F3D /* Authentication */,
 				C83E1FE125DAF48700B5009E /* RoundButton.swift */,
 				C896E10825D98B0600FCADAC /* BorderView.swift */,
 				C864856625E0009400DE71F0 /* LineView.swift */,
@@ -136,7 +141,6 @@
 		C87EF96A25DC5B9800DD0C34 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				C8E263AD2600C46E008AEDC3 /* Textfield */,
 				C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */,
 				C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */,
 			);
@@ -192,11 +196,29 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C8C1CBB32609C23D00A15F3D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C8C1CBB42609C24B00A15F3D /* ErrorPopup */,
+				C8E263AD2600C46E008AEDC3 /* Textfield */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C8C1CBB42609C24B00A15F3D /* ErrorPopup */ = {
+			isa = PBXGroup;
+			children = (
+				C8682393260B36AC0013FB18 /* ErrorPopupViewController.xib */,
+				C8682396260B36BB0013FB18 /* ErrorPopupViewController.swift */,
+			);
+			path = ErrorPopup;
+			sourceTree = "<group>";
+		};
 		C8E263AD2600C46E008AEDC3 /* Textfield */ = {
 			isa = PBXGroup;
 			children = (
 				C8E3AA7C25F948AD006AFFA0 /* RegisterTextField.xib */,
-				C8E3AA8025F94C58006AFFA0 /* RegisterTextField.swift */,
+				C8E3AA8025F94C58006AFFA0 /* RegisterTextFieldController.swift */,
 				C8E263AF2600C49D008AEDC3 /* RegisterTextFieldViewModel.swift */,
 			);
 			path = Textfield;
@@ -283,6 +305,7 @@
 			files = (
 				C864855F25DFE80700DE71F0 /* MapViewController.storyboard in Resources */,
 				C896E0EE25D980A300FCADAC /* LaunchScreen.storyboard in Resources */,
+				C8682394260B36AC0013FB18 /* ErrorPopupViewController.xib in Resources */,
 				C896E0FF25D986C200FCADAC /* LoginViewController.storyboard in Resources */,
 				C83E1FCC25DAE9DF00B5009E /* OpenSansBold.ttf in Resources */,
 				C8E3AA7D25F948AD006AFFA0 /* RegisterTextField.xib in Resources */,
@@ -370,7 +393,7 @@
 				C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */,
 				C85893D825E1220B00412063 /* MapViewControllerViewModel.swift in Sources */,
 				C8E263B02600C49D008AEDC3 /* RegisterTextFieldViewModel.swift in Sources */,
-				C8E3AA8125F94C58006AFFA0 /* RegisterTextField.swift in Sources */,
+				C8E3AA8125F94C58006AFFA0 /* RegisterTextFieldController.swift in Sources */,
 				C83E1FEA25DAF8A400B5009E /* Service.swift in Sources */,
 				C8E2BADE25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift in Sources */,
 				C8E2BAE225E3F94500AD1D00 /* MapCoordinator.swift in Sources */,
@@ -380,6 +403,7 @@
 				C864856D25E001DC00DE71F0 /* RoundViewWithEffect.swift in Sources */,
 				C83E1FD625DAEE6200B5009E /* LoginViewModel.swift in Sources */,
 				C87EF98125DC61B600DD0C34 /* R.generated.swift in Sources */,
+				C8682397260B36BB0013FB18 /* ErrorPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
