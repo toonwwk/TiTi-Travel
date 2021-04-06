@@ -26,7 +26,7 @@ class ErrorPopupViewController: UIViewController {
         closeButton.titleLabel?.font = UIFont.app.bold15
         closeButton.tintColor = UIColor.app.brown
         imageView.contentMode = .scaleAspectFit
-        imageView.image = R.image.iconError()
+        imageView.image = UIImage.app.error
         messageLabel.font = UIFont.app.bold15
         messageLabel.textColor = UIColor.app.brown
     }

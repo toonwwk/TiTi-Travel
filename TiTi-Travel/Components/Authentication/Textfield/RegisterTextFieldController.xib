@@ -78,6 +78,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <accessibility key="accessibilityConfiguration" identifier="RegisterTextFieldController"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Zcf-gQ-HCH" secondAttribute="trailing" id="5se-K6-IKH"/>
                 <constraint firstItem="lmX-lt-e48" firstAttribute="top" secondItem="Zcf-gQ-HCH" secondAttribute="bottom" constant="2" id="F1X-2c-C6T"/>

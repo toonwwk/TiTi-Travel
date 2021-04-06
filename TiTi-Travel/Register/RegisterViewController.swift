@@ -13,7 +13,7 @@ protocol registerViewControllerDelegate: AnyObject {
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var userPicImageView: UIImageView!
+    @IBOutlet weak var userPicImageView: RoundImageView!
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var nextButton: RoundButton!
     @IBOutlet weak var usernameContainerView: UIView!
@@ -33,7 +33,7 @@ class RegisterViewController: UIViewController {
     weak var delegate: registerViewControllerDelegate?
     
     static func instantiate() -> RegisterViewController {
-        return R.storyboard.registerViewController.instantiateInitialViewController()!
+        return UIStoryboard(name: "RegisterViewController", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,16 +52,18 @@ class RegisterViewController: UIViewController {
         addImageButton.setTitleColor(UIColor.app.green, for: .normal)
         addImageButton.titleLabel?.font = UIFont.app.semibold15
         backgroundView.backgroundColor = UIColor.app.white
-        userPicImageView.image = R.image.iconUserImage()
+        userPicImageView.image = UIImage.app.userImage
         nextButton.setTitle("Next", for: .normal)
         nextButton.setTitleColor(UIColor.app.white, for: .normal)
         nextButton.backgroundColor = UIColor.app.green
         
-        usernameTextfield = R.nib.registerTextField(owner: self)
-        passwordTextfield = R.nib.registerTextField(owner: self)
-        firstNameTextfield = R.nib.registerTextField(owner: self)
-        lastNameTextfield = R.nib.registerTextField(owner: self)
-        birthdayTextfield = R.nib.registerTextField(owner: self)
+        
+        
+        usernameTextfield = Bundle(for: type(of: self)).loadNibNamed("RegisterTextFieldController", owner: self, options: nil)?.first as? RegisterTextFieldController
+        passwordTextfield = Bundle(for: type(of: self)).loadNibNamed("RegisterTextFieldController", owner: self, options: nil)?.first as? RegisterTextFieldController
+        firstNameTextfield = Bundle(for: type(of: self)).loadNibNamed("RegisterTextFieldController", owner: self, options: nil)?.first as? RegisterTextFieldController
+        lastNameTextfield = Bundle(for: type(of: self)).loadNibNamed("RegisterTextFieldController", owner: self, options: nil)?.first as? RegisterTextFieldController
+        birthdayTextfield = Bundle(for: type(of: self)).loadNibNamed("RegisterTextFieldController", owner: self, options: nil)?.first as? RegisterTextFieldController
         
         usernameTextfield.configureView(with: .username)
         passwordTextfield.configureView(with: .password)
@@ -74,11 +76,6 @@ class RegisterViewController: UIViewController {
         firstNameContianerView.replace(by: firstNameTextfield)
         lastNameContainerView.replace(by: lastNameTextfield)
         birthdayContainerView.replace(by: birthdayTextfield)
-        
-        userPicImageView.layer.masksToBounds = false
-        userPicImageView.layer.cornerRadius = userPicImageView.frame.width / 2
-        userPicImageView.clipsToBounds = true
-        userPicImageView.contentMode = .scaleAspectFill
         
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self

@@ -1,9 +1,6 @@
 PODS:
   - EzPopup (1.2)
   - IQKeyboardManagerSwift (6.5.6)
-  - R.swift (5.4.0):
-    - R.swift.Library (~> 5.3.0)
-  - R.swift.Library (5.3.0)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
@@ -15,7 +12,6 @@ PODS:
 DEPENDENCIES:
   - EzPopup
   - IQKeyboardManagerSwift
-  - R.swift
   - RxCocoa (= 6.1.0)
   - RxSwift (= 6.1.0)
   - SWRevealViewController
@@ -24,8 +20,6 @@ SPEC REPOS:
   trunk:
     - EzPopup
     - IQKeyboardManagerSwift
-    - R.swift
-    - R.swift.Library
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -34,13 +28,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   EzPopup: 989ac21992a82ad6d1245c747a78bf3833279ef0
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
-  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: cc062dcdf772a558a2441fed706cd15a4b5c56f8
+PODFILE CHECKSUM: e0a517f76c1a3e35b49d2b6e5f329ae36b6024ab
 
 COCOAPODS: 1.10.1

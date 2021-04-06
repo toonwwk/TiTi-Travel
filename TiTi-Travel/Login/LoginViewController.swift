@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     }
 
     static func instantiate() -> LoginViewController {
-        return R.storyboard.loginViewController.instantiateInitialViewController()!
+        return UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
     }
     
     func commonInit() {
@@ -72,9 +72,9 @@ class LoginViewController: UIViewController {
         registerButton.titleLabel?.attributedText = NSAttributedString(string: "Sign Up", attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
         registerButton.setTitle(" Sign Up", for: .normal)
         backgroundView.backgroundColor = UIColor.app.green
-        iconAppImageView.image = R.image.iconApp()
-        iconUserImageView.image = R.image.iconUsername()
-        iconPasswordImageView.image = R.image.iconPassword()
+        iconAppImageView.image = UIImage.app.appLogo
+        iconUserImageView.image = UIImage.app.username
+        iconPasswordImageView.image = UIImage.app.password
     }
     
     func configureNavigationBar() {
@@ -111,9 +111,5 @@ extension LoginViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
-    
-}
-
-extension LoginViewController: UIViewControllerTransitioningDelegate {
     
 }

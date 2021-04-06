@@ -12,34 +12,79 @@ extension UIFont {
     
     public struct app {
         public static var regular10: UIFont {
-            return UIFont(name: R.font.openSans.fontName, size: 10)!
+            return UIFont(name: "OpenSans", size: 10)!
         }
         
         public static var regular15: UIFont {
-            return UIFont(name: R.font.openSans.fontName, size: 15)!
+            return UIFont(name: "OpenSans", size: 15)!
         }
         
         public static var bold15: UIFont {
-            return UIFont(name: R.font.openSansBold.fontName, size: 15)!
+            return UIFont(name: "OpenSans-Bold", size: 15)!
         }
         
         public static var semibold15: UIFont {
-            return UIFont(name: R.font.openSansSemibold.fontName, size: 15)!
+            return UIFont(name: "OpenSans-Semibold", size: 15)!
+        }
+        
+        public static var semibold13: UIFont {
+            return UIFont(name: "OpenSans-Semibold", size: 13)!
         }
         
         public static var regular13: UIFont {
-            return UIFont(name: R.font.openSans.fontName, size: 13)!
+            return UIFont(name: "OpenSans-Semibold", size: 13)!
         }
         
         public static var regular12: UIFont {
-            return UIFont(name: R.font.openSans.fontName, size: 12)!
+            return UIFont(name: "OpenSans-Semibold", size: 12)!
         }
         
         public static var bold18: UIFont {
-            return UIFont(name: R.font.openSansBold.fontName, size: 18)!
+            return UIFont(name: "OpenSans-Bold", size: 18)!
         }
     }
     
+}
+
+// MARK:- Asset
+extension UIImage {
+    public struct app {
+        public static var pin: UIImage {
+            return UIImage(named: "icon-pin")!
+        }
+        
+        public static var appLogo: UIImage {
+            return UIImage(named: "icon-app")!
+        }
+        
+        public static var error: UIImage {
+            return UIImage(named: "icon-error")!
+        }
+        
+        public static var filter: UIImage {
+            return UIImage(named: "icon-filter")!
+        }
+        
+        public static var centerLocation: UIImage {
+            return UIImage(named: "icon-center-location")!
+        }
+        
+        public static var navLogo: UIImage {
+            return UIImage(named: "icon-nav-bar-logo")!
+        }
+        
+        public static var username: UIImage {
+            return UIImage(named: "icon-username")!
+        }
+        
+        public static var password: UIImage {
+            return UIImage(named: "icon-password")!
+        }
+        
+        public static var userImage: UIImage {
+            return UIImage(named: "icon-user-image")!
+        }
+    }
 }
 
 // MARK:- Color

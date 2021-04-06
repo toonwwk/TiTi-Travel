@@ -7,7 +7,6 @@ target 'TiTi-Travel' do
     pod 'RxSwift', '6.1.0'
     pod 'RxCocoa', '6.1.0'
     pod 'IQKeyboardManagerSwift'
-    pod 'R.swift'
     pod 'SWRevealViewController'
     pod 'EzPopup'
 end

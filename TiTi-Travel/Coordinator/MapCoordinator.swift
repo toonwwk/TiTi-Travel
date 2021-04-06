@@ -6,22 +6,24 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class MapCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
-    
     var navigationController: UINavigationController
-    
-    var mapViewController: MapViewController!
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.navigationBar.barTintColor = UIColor.app.green
+        UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.app.bold18,
+                                                            .foregroundColor: UIColor.app.white]
+        
     }
     
     func start() {
-        mapViewController = MapViewController.instantiate()
-        navigationController.pushViewController(mapViewController, animated: true)
+        let reveal =  UIStoryboard(name: "MapViewController", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+        navigationController.pushViewController(reveal, animated: true)
     }
     
     func end() {
