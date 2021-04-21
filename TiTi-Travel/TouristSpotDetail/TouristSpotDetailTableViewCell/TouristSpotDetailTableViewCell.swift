@@ -6,18 +6,33 @@
 //
 
 import UIKit
+import Kingfisher
+
+enum TouristSpotDetailTableViewCellType {
+    case title
+    case description
+    case price
+    case priceRange
+}
 
 class TouristSpotDetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        commonInit()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func commonInit() {
+        descriptionLabel.setFontAndColor(with: UIFont.app.regular15, and: UIColor.app.green)
+        iconImageView.contentMode = .scaleAspectFill
+    }
+    
+    func configure(with image: UIImage, and text: String) {
+        iconImageView.image = image
+        descriptionLabel.text = text
     }
     
 }

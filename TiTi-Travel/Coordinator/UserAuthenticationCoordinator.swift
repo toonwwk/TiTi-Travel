@@ -53,7 +53,7 @@ extension UserAuthenticationCoordinator: LoginViewControllerDelegate {
 }
 
 // MARK:- RegisterViewControllerDelegate
-extension UserAuthenticationCoordinator: registerViewControllerDelegate {
+extension UserAuthenticationCoordinator: RegisterViewControllerDelegate {
     
     func registerViewControllerDidTapNextButton(_ registerViewController: RegisterViewController) {
         navigationController.popViewController(animated: true)

@@ -18,7 +18,7 @@ enum RegisterTextFieldType: String, CaseIterable {
 class RegisterTextFieldController: UIView {
         
     @IBOutlet weak var leftLabel: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField: RegisterTextField!
     @IBOutlet weak var errorLabel: UILabel!
 
     var isValid = false
@@ -39,8 +39,8 @@ class RegisterTextFieldController: UIView {
         backgroundColor = UIColor.app.white
         leftLabel.textColor = UIColor.app.green
         leftLabel.font = UIFont.app.semibold15
-        textField.initStyle(with: .register)
         textField.delegate = self
+        textField.returnKeyType = UIReturnKeyType.done
         errorLabel.textColor = UIColor.app.orange
         errorLabel.font = UIFont.app.regular10
         errorLabel.text = ""

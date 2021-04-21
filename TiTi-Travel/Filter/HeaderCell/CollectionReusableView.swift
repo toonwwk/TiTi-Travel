@@ -9,9 +9,21 @@ import UIKit
 
 class CollectionReusableView: UICollectionReusableView {
 
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var headerBackground: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        commonInit()
+    }
+    
+    func commonInit() {
+        headerLabel.font = UIFont.app.bold15
+        headerLabel.textColor = UIColor.app.brown
+    }
+    
+    func configure(with text: String) {
+        headerLabel.text = text
     }
     
 }

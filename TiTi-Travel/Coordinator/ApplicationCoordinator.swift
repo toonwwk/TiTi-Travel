@@ -27,6 +27,7 @@ class ApplicationCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.pushViewController(rootViewController, animated: false)
+        self.navigationController.navigationBar.isTranslucent = false
         rootViewController.view.backgroundColor = UIColor.app.green
     }
     

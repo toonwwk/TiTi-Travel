@@ -6,24 +6,39 @@
 //
 
 import Foundation
-import CoreLocation
+
+enum ServiceStatusType {
+    case loading, success, failed
+}
 
 class MapViewControllerViewModel {
     
-    let locationManager = CLLocationManager()
-    let authorizationStatus = CLLocationManager.authorizationStatus()
-    let regionRadius: Double = 3000
+    let service = TiTiService()
+    var touristSpots = [TouristSpot]()
+    var statusType: ServiceStatusType = .loading
+    var updateHandler: (() -> ())?
+
+    func fetchTouristSpots(lat: Int, long: Int, priceRange: String, categories: [String]) {
+        service.fetchData(lat: lat, long: long, priceRange: priceRange, categories: categories, isCompleted: { (data) in
+            self.touristSpots = data.locations ?? []
+            self.statusType = .success
+            self.updateHandler?()
+        }, isFailed: { (error) in
+            print(error.localizedDescription)
+            self.statusType = .failed
+        })
+    }
     
-    lazy var locationAccessEnable: Bool = {
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .authorizedAlways, .authorizedWhenInUse:
-                return true
-            default:
-                return false
-            }
+    func getNumberOfTouristSpots() -> Int { return statusType == .success ? touristSpots.count: 0 }
+    
+    func dataForPointAnnotation(at index: Int) -> CustomPointAnnotationViewModel {
+        let touristSpot = touristSpots[index]
+        let title = touristSpot.name ?? ""
+        let des = touristSpot.description ?? ""
+        let price = touristSpot.price ?? 0.0
+        let images = touristSpot.images ?? [""]
+        let priceRange = touristSpot.priceRange ?? "-"
+        return CustomPointAnnotationViewModel(title: title, des: des, price: price, images: images, priceRange: priceRange)
         }
-        return false
-    }()
     
 }

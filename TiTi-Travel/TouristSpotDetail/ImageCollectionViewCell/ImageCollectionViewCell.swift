@@ -6,12 +6,24 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImageCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var image: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        commonInit()
     }
 
+    func commonInit() {
+        image.layer.cornerRadius = 20
+        image.contentMode = .scaleAspectFill
+    }
+    
+    func configure(with url: URL) {
+        image.kf.setImage(with: url)
+    }
+    
 }

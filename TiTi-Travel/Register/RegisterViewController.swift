@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol registerViewControllerDelegate: AnyObject {
+protocol RegisterViewControllerDelegate: AnyObject {
     func registerViewControllerDidTapNextButton(_ registerViewController: RegisterViewController)
 }
 
@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
     var lastNameTextfield: RegisterTextFieldController!
     var birthdayTextfield: RegisterTextFieldController!
 
-    weak var delegate: registerViewControllerDelegate?
+    weak var delegate: RegisterViewControllerDelegate?
     
     static func instantiate() -> RegisterViewController {
         return UIStoryboard(name: "RegisterViewController", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
@@ -49,12 +49,11 @@ class RegisterViewController: UIViewController {
     
     private func commonInit() {
         addImageButton.setTitle("Add Profile Photo", for: .normal)
-        addImageButton.setTitleColor(UIColor.app.green, for: .normal)
-        addImageButton.titleLabel?.font = UIFont.app.semibold15
+        addImageButton.setFontAndColor(with: UIFont.app.bold15, and: UIColor.app.green)
         backgroundView.backgroundColor = UIColor.app.white
         userPicImageView.image = UIImage.app.userImage
         nextButton.setTitle("Next", for: .normal)
-        nextButton.setTitleColor(UIColor.app.white, for: .normal)
+        nextButton.setFontAndColor(with: UIFont.app.bold15, and: UIColor.app.white)
         nextButton.backgroundColor = UIColor.app.green
         
         

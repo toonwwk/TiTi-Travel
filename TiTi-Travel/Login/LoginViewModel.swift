@@ -9,6 +9,5 @@ import Foundation
 
 class LoginViewModel {
     
-    var service = Service()
     
 }

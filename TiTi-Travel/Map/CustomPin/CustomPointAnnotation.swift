@@ -9,5 +9,15 @@ import Foundation
 import MapKit
 
 class CustomPointAnnotation: MKPointAnnotation {
-    var viewModel: Location?
+    
+    let viewModel: CustomPointAnnotationViewModel
+
+    init(with viewModel: CustomPointAnnotationViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    func printSth() {
+        print(viewModel.title)
+    }
+    
 }

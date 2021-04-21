@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import SWRevealViewController
 
-class MapViewController: UIViewController, MKMapViewDelegate, SWRevealViewControllerDelegate {
+class MapViewController: UIViewController, SWRevealViewControllerDelegate {
     
     @IBOutlet weak var searchBarView: RoundViewWithEffect!
     @IBOutlet weak var searchImageView: UIImageView!
@@ -21,6 +21,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, SWRevealViewContro
     let locationManager = CLLocationManager()
     let authorizationStatus = CLLocationManager.authorizationStatus()
     let regionRadius: Double = 2000
+    let viewModel = MapViewControllerViewModel()
+    
+    var titleLabels = [UILabel]()
     
     lazy var locationAccessEnable: Bool = {
         if CLLocationManager.locationServicesEnabled() {
@@ -71,6 +74,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, SWRevealViewContro
         mapView.showsUserLocation = true
         mapView.delegate = self
         
+        if #available(iOS 13.0, *) {
+            mapView.overrideUserInterfaceStyle = .light
+        }
+        
         if(locationAccessEnable) {
             zoomToUserLocation()
         } else {
@@ -79,15 +86,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, SWRevealViewContro
     }
     
     func configureNavigationItem() {
+        
         if let rvv = self.revealViewController() {
             self.navigationItem.titleView = UIImageView(image: UIImage.app.navLogo)
             self.navigationController?.navigationBar.barTintColor = UIColor.app.green
+            self.navigationController?.navigationBar.isTranslucent = false
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            rvv.rearViewRevealWidth = self.view.frame.width * 3 / 4
-            self.navigationItem.leftBarButtonItem?.target = revealViewController()
+            self.navigationItem.leftBarButtonItem?.target = rvv
             self.navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
+            rvv.rearViewRevealWidth = self.view.frame.width * 3 / 4
+            rvv.rightViewRevealWidth = self.view.frame.width * 3 / 4
+            if let c = rvv.rightViewController as? FilterViewController {
+                c.delegate = self
+            }
+            filterButton.addTarget(rvv, action: #selector(SWRevealViewController.rightRevealToggle(_:)), for: .touchUpInside)
         }
+        
     }
     
     func zoomToUserLocation() {
@@ -96,8 +111,28 @@ class MapViewController: UIViewController, MKMapViewDelegate, SWRevealViewContro
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    @objc func didTapSideBarIcon() {
-        
+    func addAnnotation(at location: Location) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        let pin = MKPointAnnotation()
+        pin.title = location.title
+        pin.coordinate = location.coordinate
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.addAnnotations([pin])
+    }
+    
+    func addCustomAnnotation(at location: Location) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+//        let pin = CustomPointAnnotation(with: viewModel.dataForPointAnnotation(at: 0))
+        let pin = CustomPointAnnotation(with: CustomPointAnnotationViewModel(title: "t", des: "d", price: 0.0, images: [], priceRange: "d"))
+        pin.title = location.title
+        pin.coordinate = location.coordinate
+        mapView.removeAnnotations(mapView.annotations)
+        for label in titleLabels {
+            label.removeFromSuperview()
+        }
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.addAnnotations([pin])
     }
     
     @IBAction func didTapFilterButton(_ sender: RoundButton) {
@@ -108,6 +143,60 @@ class MapViewController: UIViewController, MKMapViewDelegate, SWRevealViewContro
         if(locationAccessEnable) {
             zoomToUserLocation()
         }
+    }
+    
+    @IBAction func didTapSearchBar(_ sender: UITapGestureRecognizer) {
+        let vc = SearchingLocationViewController.instantiate()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
+}
+
+extension MapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let Identifier = "Pin"
+        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: Identifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: Identifier)
+
+//        annotationView.canShowCallout = true
+        if annotation is CustomPointAnnotation {
+            let selectedLabel:UILabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 120, height: 25))
+            selectedLabel.text = annotation.title ?? ""
+            selectedLabel.textAlignment = .center
+            selectedLabel.backgroundColor = UIColor.app.gray192.withAlphaComponent(0.5)
+            selectedLabel.setFontAndColor(with: UIFont.app.semibold13, and: UIColor.app.brown)
+            selectedLabel.layer.masksToBounds = true
+            selectedLabel.translatesAutoresizingMaskIntoConstraints = false
+            annotationView.contentMode = .scaleAspectFit
+            annotationView.image =  UIImage.app.pin
+            annotationView.addSubview(selectedLabel)
+            selectedLabel.centerXAnchor.constraint(equalTo: annotationView.centerXAnchor).isActive = true
+            selectedLabel.topAnchor.constraint(equalTo: annotationView.bottomAnchor).isActive = true
+            titleLabels.append(selectedLabel)
+            return annotationView
+        } else if annotation is MKPointAnnotation {
+            return nil
+        } else {
+            return nil
+        }
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let vc = TouristSpotDetailViewController.instantiate()
+        navigationController?.pushViewController(vc, animated: true)
+//        if let ann = view.annotation as? CustomPointAnnotation {
+//            ann.printSth()
+//        }
+//
+//
+//
+//        if let a = view.annotation?.title {
+//            print("select :: " + (a ?? ""))
+//            mapView.deselectAnnotation(view.annotation!, animated: false)
+//        }
     }
     
 }
@@ -133,4 +222,19 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
     
+}
+
+extension MapViewController: SearchingLocationViewControllerDelegate {
+    
+    func searchingLocationViewControllerDidSelect(_ location: Location) {
+        addCustomAnnotation(at: location)
+    }
+    
+}
+
+extension MapViewController: FilterViewControllerDelegate {
+    
+    func didTapConfirm() {
+    }
+        
 }

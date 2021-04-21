@@ -31,6 +31,10 @@ extension UIFont {
             return UIFont(name: "OpenSans-Semibold", size: 13)!
         }
         
+        public static var semibold10: UIFont {
+            return UIFont(name: "OpenSans-Semibold", size: 10)!
+        }
+        
         public static var regular13: UIFont {
             return UIFont(name: "OpenSans-Semibold", size: 13)!
         }
@@ -126,7 +130,7 @@ extension UIColor {
     
 }
 
-// MARK:- View
+// MARK:- UIView
 extension UIView {
     
     func replace(by subview: UIView) {
@@ -163,6 +167,10 @@ extension UITextField {
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
+    }
+    
+    func setPlaceHolder(with text: String) {
+        self.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
     }
     
 }
@@ -221,6 +229,29 @@ extension String {
     
     func hasWhiteSpace() -> Bool {
         return validate(with: ".*[\\s].*")
+    }
+    
+}
+
+extension UILabel {
+    
+    func setFontAndColor(with font: UIFont, and color: UIColor) {
+        self.font = font
+        self.textColor = color
+    }
+    
+}
+
+extension UIButton{
+    
+    func setFontAndColor(with font: UIFont, and color: UIColor) {
+        self.titleLabel?.font = font
+        self.setTitleColor(color, for: .normal)
+    }
+    
+    func setUnderlinedText(with text: String) {
+        self.titleLabel?.attributedText = NSAttributedString(string: text, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
+        self.setTitle(text, for: .normal)
     }
     
 }

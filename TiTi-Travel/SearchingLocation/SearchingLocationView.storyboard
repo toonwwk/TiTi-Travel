@@ -1,28 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Searching Location View Controller-->
         <scene sceneID="sCk-S5-b6d">
             <objects>
-                <viewController id="0Om-9P-a8D" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchingLocationViewController" id="0Om-9P-a8D" customClass="SearchingLocationViewController" customModule="TiTi_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JJo-Uh-ywh"/>
+                        <viewControllerLayoutGuide type="bottom" id="HLF-Gd-bu5"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BoQ-6P-04N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="2WS-p1-p0o"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNU-pq-E3w" customClass="RoundViewWithEffect" customModule="TiTi_Travel" customModuleProvider="target">
+                                <rect key="frame" x="15" y="59.5" width="384" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xon-Ov-8gc">
+                                        <rect key="frame" x="7.5" y="7.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="2vO-sJ-23o"/>
+                                            <constraint firstAttribute="width" constant="25" id="dwk-zG-Z88"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCp-8s-1SI">
+                                        <rect key="frame" x="47.5" y="3" width="321.5" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="k5j-HC-Pum"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zCp-8s-1SI" firstAttribute="top" secondItem="gNU-pq-E3w" secondAttribute="top" constant="3" id="2Fr-xN-sZn"/>
+                                    <constraint firstItem="zCp-8s-1SI" firstAttribute="leading" secondItem="Xon-Ov-8gc" secondAttribute="trailing" constant="15" id="6bx-9P-vGZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="Fig-TO-gUp"/>
+                                    <constraint firstAttribute="trailing" secondItem="zCp-8s-1SI" secondAttribute="trailing" constant="15" id="Toy-tI-OJZ"/>
+                                    <constraint firstItem="Xon-Ov-8gc" firstAttribute="centerY" secondItem="gNU-pq-E3w" secondAttribute="centerY" id="h8B-mW-l4C"/>
+                                    <constraint firstItem="Xon-Ov-8gc" firstAttribute="leading" secondItem="gNU-pq-E3w" secondAttribute="leading" constant="7.5" id="lWA-lG-vsu"/>
+                                    <constraint firstAttribute="bottom" secondItem="zCp-8s-1SI" secondAttribute="bottom" constant="3" id="lg4-R0-JXr"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s27-Wz-Q03">
+                                <rect key="frame" x="0.0" y="114.5" width="414" height="781.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMS-Am-kTI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="0.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="ubO-By-sS3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gNU-pq-E3w" secondAttribute="trailing" constant="15" id="CG3-lt-kOV"/>
+                            <constraint firstAttribute="trailing" secondItem="s27-Wz-Q03" secondAttribute="trailing" id="SYD-GK-jNi"/>
+                            <constraint firstAttribute="trailing" secondItem="YMS-Am-kTI" secondAttribute="trailing" id="UZu-J3-3jR"/>
+                            <constraint firstItem="s27-Wz-Q03" firstAttribute="top" secondItem="gNU-pq-E3w" secondAttribute="bottom" constant="15" id="as5-su-wjh"/>
+                            <constraint firstItem="YMS-Am-kTI" firstAttribute="leading" secondItem="BoQ-6P-04N" secondAttribute="leading" id="b5e-4e-cxL"/>
+                            <constraint firstItem="gNU-pq-E3w" firstAttribute="top" secondItem="JJo-Uh-ywh" secondAttribute="bottom" constant="15.5" id="bRv-Tf-bMa"/>
+                            <constraint firstItem="gNU-pq-E3w" firstAttribute="leading" secondItem="BoQ-6P-04N" secondAttribute="leading" constant="15" id="bW6-KN-KQG"/>
+                            <constraint firstItem="s27-Wz-Q03" firstAttribute="leading" secondItem="BoQ-6P-04N" secondAttribute="leading" id="mVY-n9-0tT"/>
+                            <constraint firstItem="YMS-Am-kTI" firstAttribute="top" secondItem="JJo-Uh-ywh" secondAttribute="bottom" id="tRN-Rq-a4k"/>
+                            <constraint firstAttribute="bottom" secondItem="s27-Wz-Q03" secondAttribute="bottom" id="zhA-ON-326"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultTableView" destination="s27-Wz-Q03" id="4LZ-Ll-cfc"/>
+                        <outlet property="searchField" destination="zCp-8s-1SI" id="5jR-gH-xge"/>
+                        <outlet property="searchImageView" destination="Xon-Ov-8gc" id="bm8-Ra-sXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vp2-as-yW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-590" y="145"/>
+            <point key="canvasLocation" x="-591.304347826087" y="144.64285714285714"/>
         </scene>
     </scenes>
     <resources>

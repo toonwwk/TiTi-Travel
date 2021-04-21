@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct TouristSpot: Decodable {
+    let name: String?
+    let description: String?
+    let price: Double?
+    let lat: Double?
+    let long: Double?
+    let images: [String]?
+    let priceRange: String?
+}

@@ -24,11 +24,12 @@
                     <connections>
                         <segue destination="KPD-WL-1nk" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="dYp-DG-qgY"/>
                         <segue destination="OPG-QG-R6F" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="EpK-0j-clL"/>
+                        <segue destination="Gy5-iZ-Wcy" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegueSetController" id="cBA-IZ-tWK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIO-bm-res" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1143" y="90"/>
+            <point key="canvasLocation" x="-1151" y="90"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="5AB-Dm-00M">
@@ -42,7 +43,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s7D-hE-AiT">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7D-hE-AiT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whW-5z-X9g" customClass="RoundViewWithEffect" customModule="TiTi_Travel" customModuleProvider="target">
@@ -66,6 +67,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="BJa-rA-R8B" firstAttribute="leading" secondItem="f9Z-8C-qK3" secondAttribute="trailing" constant="15" id="COp-c4-NCU"/>
                                     <constraint firstAttribute="height" constant="40" id="Emo-8r-Vy6"/>
@@ -74,6 +76,9 @@
                                     <constraint firstAttribute="trailing" secondItem="BJa-rA-R8B" secondAttribute="trailing" constant="15" id="auP-7O-1Cf"/>
                                     <constraint firstItem="BJa-rA-R8B" firstAttribute="centerY" secondItem="whW-5z-X9g" secondAttribute="centerY" id="fdg-4R-Vwd"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6WN-vq-de8" appends="YES" id="MSV-6P-gkr"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-VP-oht" customClass="RoundButton" customModule="TiTi_Travel" customModuleProvider="target">
                                 <rect key="frame" x="324" y="153" width="75" height="25"/>
@@ -99,6 +104,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="aop-O4-0u5" firstAttribute="top" secondItem="MuY-oS-iMI" secondAttribute="bottom" constant="100" id="0ca-vZ-uqr"/>
                             <constraint firstItem="whW-5z-X9g" firstAttribute="top" secondItem="QFh-RP-edO" secondAttribute="bottom" constant="15" id="30N-uR-VlR"/>
@@ -128,8 +134,108 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXY-dh-8eM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6WN-vq-de8">
+                    <connections>
+                        <action selector="didTapSearchBar:" destination="Sio-VU-mml" id="8do-Kk-98O"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1189.8550724637682" y="89.732142857142847"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="5IP-Bf-paZ">
+            <objects>
+                <viewController id="Gy5-iZ-Wcy" customClass="FilterViewController" customModule="TiTi_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vlc-lr-tFb"/>
+                        <viewControllerLayoutGuide type="bottom" id="osQ-zr-mYa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RDa-8e-gzw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1B-FU-Xro">
+                                <rect key="frame" x="61" y="0.0" width="353" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch0-gh-afC">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VE-Zx-RuT">
+                                                <rect key="frame" x="20" y="45" width="313" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="m6c-X6-KFH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="5VE-Zx-RuT" firstAttribute="leading" secondItem="Ch0-gh-afC" secondAttribute="leading" constant="20" id="KCc-YN-I2H"/>
+                                            <constraint firstAttribute="trailing" secondItem="5VE-Zx-RuT" secondAttribute="trailing" constant="20" id="dx9-YG-bkC"/>
+                                            <constraint firstAttribute="height" constant="80" id="pfJ-tt-7vc"/>
+                                            <constraint firstAttribute="bottom" secondItem="5VE-Zx-RuT" secondAttribute="bottom" constant="10" id="tea-zo-Sa7"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vdB-DP-5nf">
+                                        <rect key="frame" x="20" y="80" width="313" height="716"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ssT-R9-h6G">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="50" height="50"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d0a-wA-JNV" customClass="CollectionReusableView" customModule="TiTi_Travel" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionReusableView>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cle-Au-are">
+                                        <rect key="frame" x="20" y="816" width="313" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="I0q-f7-z8r"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapConfirmButton:" destination="Gy5-iZ-Wcy" eventType="touchUpInside" id="xqR-Pv-2nB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Cle-Au-are" firstAttribute="leading" secondItem="W1B-FU-Xro" secondAttribute="leading" constant="20" id="2nA-Hh-wJv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ch0-gh-afC" secondAttribute="trailing" id="Bzz-Yq-0ma"/>
+                                    <constraint firstItem="vdB-DP-5nf" firstAttribute="leading" secondItem="W1B-FU-Xro" secondAttribute="leading" constant="20" id="EnL-rj-Oa6"/>
+                                    <constraint firstItem="Ch0-gh-afC" firstAttribute="top" secondItem="W1B-FU-Xro" secondAttribute="top" id="Kpf-ac-NAJ"/>
+                                    <constraint firstItem="Cle-Au-are" firstAttribute="top" secondItem="vdB-DP-5nf" secondAttribute="bottom" constant="20" id="LTI-qP-4ZZ"/>
+                                    <constraint firstItem="Ch0-gh-afC" firstAttribute="leading" secondItem="W1B-FU-Xro" secondAttribute="leading" id="OPC-NS-VgW"/>
+                                    <constraint firstItem="vdB-DP-5nf" firstAttribute="top" secondItem="Ch0-gh-afC" secondAttribute="bottom" id="Tfd-Ud-chd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cle-Au-are" secondAttribute="trailing" constant="20" id="Zan-Zv-Cxh"/>
+                                    <constraint firstAttribute="trailing" secondItem="vdB-DP-5nf" secondAttribute="trailing" constant="20" id="s4n-Nr-zER"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cle-Au-are" secondAttribute="bottom" constant="40" id="x2c-Tp-myN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="W1B-FU-Xro" firstAttribute="leading" secondItem="RDa-8e-gzw" secondAttribute="leading" constant="61" id="1Ht-fP-IOs"/>
+                            <constraint firstAttribute="bottom" secondItem="W1B-FU-Xro" secondAttribute="bottom" id="By5-IH-KmW"/>
+                            <constraint firstItem="W1B-FU-Xro" firstAttribute="top" secondItem="RDa-8e-gzw" secondAttribute="top" id="Eid-FK-UhI"/>
+                            <constraint firstAttribute="trailing" secondItem="W1B-FU-Xro" secondAttribute="trailing" id="vXw-IO-L9c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="Cle-Au-are" id="out-O6-V9c"/>
+                        <outlet property="filterBackgroundView" destination="Ch0-gh-afC" id="ey7-OV-HiE"/>
+                        <outlet property="filterCollectionView" destination="vdB-DP-5nf" id="wzT-sf-VGL"/>
+                        <outlet property="filterLabel" destination="5VE-Zx-RuT" id="yXN-NX-lHc"/>
+                        <segue destination="KPD-WL-1nk" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="9ee-4z-PKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dV5-E0-7Ww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294.20289855072468" y="-651.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qqf-h3-uC0">
@@ -147,7 +253,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrK-4R-dbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279.71014492753625" y="89.732142857142847"/>
+            <point key="canvasLocation" x="297" y="90"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="e62-jR-X6e">
@@ -175,7 +281,7 @@
                                                     <constraint firstAttribute="width" constant="120" id="re5-5z-tKO"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJr-Yh-CGx" customClass="bold15Label" customModule="TiTi_Travel" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJr-Yh-CGx">
                                                 <rect key="frame" x="20" y="205" width="313" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="lUV-YX-t5U"/>
@@ -195,7 +301,7 @@
                                             <constraint firstItem="bx8-92-tO3" firstAttribute="centerX" secondItem="e87-nU-BDk" secondAttribute="centerX" id="qwa-VK-GRZ"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rM-RS-3uJ" customClass="bold15Label" customModule="TiTi_Travel" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rM-RS-3uJ">
                                         <rect key="frame" x="10" y="260" width="333" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Lbg-uI-f69"/>
@@ -204,10 +310,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Iab-Xl-Cqj">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iab-Xl-Cqj">
                                         <rect key="frame" x="10" y="305" width="333" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhX-Hy-x4q" customClass="semiBold13Label" customModule="TiTi_Travel" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhX-Hy-x4q">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="dX5-5G-178"/>
@@ -217,14 +323,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-UH-D1G" customClass="GreenLineView" customModule="TiTi_Travel" customModuleProvider="target">
-                                                <rect key="frame" x="75" y="0.0" width="1" height="25"/>
+                                                <rect key="frame" x="80" y="0.0" width="1" height="25"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="1Pb-ze-T6L"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-YO-kSA" customClass="semiBold13Label" customModule="TiTi_Travel" customModuleProvider="target">
-                                                <rect key="frame" x="81" y="0.0" width="252" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-YO-kSA">
+                                                <rect key="frame" x="91" y="0.0" width="242" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -233,21 +339,18 @@
                                         <constraints>
                                             <constraint firstItem="kFx-YO-kSA" firstAttribute="top" secondItem="Iab-Xl-Cqj" secondAttribute="top" id="2y9-L1-mv0"/>
                                             <constraint firstItem="jhX-Hy-x4q" firstAttribute="top" secondItem="Iab-Xl-Cqj" secondAttribute="top" id="6SF-Ac-HNY"/>
-                                            <constraint firstItem="QV8-UH-D1G" firstAttribute="leading" secondItem="jhX-Hy-x4q" secondAttribute="trailing" id="DPa-Oo-f0l"/>
                                             <constraint firstItem="jhX-Hy-x4q" firstAttribute="leading" secondItem="Iab-Xl-Cqj" secondAttribute="leading" id="E4M-ff-vCD"/>
                                             <constraint firstAttribute="height" constant="25" id="GIh-uU-GDl"/>
                                             <constraint firstItem="QV8-UH-D1G" firstAttribute="top" secondItem="Iab-Xl-Cqj" secondAttribute="top" id="NEj-Nu-mWd"/>
-                                            <constraint firstItem="kFx-YO-kSA" firstAttribute="leading" secondItem="QV8-UH-D1G" secondAttribute="trailing" constant="10" id="R3K-w4-Sxp"/>
                                             <constraint firstAttribute="bottom" secondItem="QV8-UH-D1G" secondAttribute="bottom" id="Y2e-35-dAa"/>
-                                            <constraint firstItem="QV8-UH-D1G" firstAttribute="leading" secondItem="jhX-Hy-x4q" secondAttribute="trailing" id="bet-Zq-OU1"/>
                                             <constraint firstAttribute="bottom" secondItem="jhX-Hy-x4q" secondAttribute="bottom" id="p3z-Ii-azo"/>
                                             <constraint firstAttribute="trailing" secondItem="kFx-YO-kSA" secondAttribute="trailing" id="vb5-R1-q4h"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-gs-klj">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-gs-klj">
                                         <rect key="frame" x="10" y="350" width="333" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-0F-cyq" customClass="semiBold13Label" customModule="TiTi_Travel" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-0F-cyq">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Tbb-cN-vad"/>
@@ -257,14 +360,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXI-vS-QCE" customClass="GreenLineView" customModule="TiTi_Travel" customModuleProvider="target">
-                                                <rect key="frame" x="75" y="0.0" width="1" height="25"/>
+                                                <rect key="frame" x="80" y="0.0" width="1" height="25"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="WJ9-Db-BqM"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Poe-iM-lVz" customClass="semiBold13Label" customModule="TiTi_Travel" customModuleProvider="target">
-                                                <rect key="frame" x="81" y="0.0" width="252" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Poe-iM-lVz">
+                                                <rect key="frame" x="91" y="0.0" width="242" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -275,19 +378,16 @@
                                             <constraint firstAttribute="bottom" secondItem="cNa-0F-cyq" secondAttribute="bottom" id="6k9-PH-BUb"/>
                                             <constraint firstItem="Poe-iM-lVz" firstAttribute="top" secondItem="dTg-gs-klj" secondAttribute="top" id="BLb-Fd-44n"/>
                                             <constraint firstItem="cNa-0F-cyq" firstAttribute="leading" secondItem="dTg-gs-klj" secondAttribute="leading" id="KFs-h0-YCU"/>
-                                            <constraint firstItem="QXI-vS-QCE" firstAttribute="leading" secondItem="cNa-0F-cyq" secondAttribute="trailing" id="WGC-7h-MoE"/>
                                             <constraint firstItem="QXI-vS-QCE" firstAttribute="top" secondItem="dTg-gs-klj" secondAttribute="top" id="cZD-Bs-MhN"/>
-                                            <constraint firstItem="QXI-vS-QCE" firstAttribute="leading" secondItem="cNa-0F-cyq" secondAttribute="trailing" id="fJF-oP-NUR"/>
                                             <constraint firstAttribute="height" constant="25" id="lgo-0x-dch"/>
                                             <constraint firstAttribute="trailing" secondItem="Poe-iM-lVz" secondAttribute="trailing" id="o9k-Qk-k47"/>
                                             <constraint firstAttribute="bottom" secondItem="QXI-vS-QCE" secondAttribute="bottom" id="ue9-95-Fgg"/>
-                                            <constraint firstItem="Poe-iM-lVz" firstAttribute="leading" secondItem="QXI-vS-QCE" secondAttribute="trailing" constant="10" id="zqc-BE-7un"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-xA-i46">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-xA-i46">
                                         <rect key="frame" x="10" y="395" width="333" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfF-52-P8k" customClass="semiBold13Label" customModule="TiTi_Travel" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfF-52-P8k">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="V81-9v-FzY"/>
@@ -297,21 +397,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCK-Se-DEs" customClass="GreenLineView" customModule="TiTi_Travel" customModuleProvider="target">
-                                                <rect key="frame" x="75" y="0.0" width="1" height="25"/>
+                                                <rect key="frame" x="80" y="0.0" width="1" height="25"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="p1H-6o-ZI1"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMJ-sX-BKZ" customClass="semiBold13Label" customModule="TiTi_Travel" customModuleProvider="target">
-                                                <rect key="frame" x="81" y="0.0" width="252" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMJ-sX-BKZ">
+                                                <rect key="frame" x="91" y="0.0" width="242" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="IMJ-sX-BKZ" firstAttribute="leading" secondItem="XCK-Se-DEs" secondAttribute="trailing" constant="10" id="6iI-Gn-BcV"/>
                                             <constraint firstAttribute="height" constant="25" id="8pj-Bj-C8H"/>
                                             <constraint firstItem="IMJ-sX-BKZ" firstAttribute="top" secondItem="Saq-xA-i46" secondAttribute="top" id="N4p-xN-MC0"/>
                                             <constraint firstItem="GfF-52-P8k" firstAttribute="leading" secondItem="Saq-xA-i46" secondAttribute="leading" id="PBj-rR-0gD"/>
@@ -320,8 +419,6 @@
                                             <constraint firstAttribute="trailing" secondItem="IMJ-sX-BKZ" secondAttribute="trailing" id="kj0-uD-xsb"/>
                                             <constraint firstItem="GfF-52-P8k" firstAttribute="top" secondItem="Saq-xA-i46" secondAttribute="top" id="n0B-Wh-FVK"/>
                                             <constraint firstItem="XCK-Se-DEs" firstAttribute="top" secondItem="Saq-xA-i46" secondAttribute="top" id="nW3-K8-VE0"/>
-                                            <constraint firstItem="XCK-Se-DEs" firstAttribute="leading" secondItem="GfF-52-P8k" secondAttribute="trailing" id="uRQ-zn-eaz"/>
-                                            <constraint firstItem="XCK-Se-DEs" firstAttribute="leading" secondItem="GfF-52-P8k" secondAttribute="trailing" id="xr1-cn-jT8"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHy-El-m4m" customClass="GreenLineView" customModule="TiTi_Travel" customModuleProvider="target">
@@ -341,7 +438,7 @@
                                                     <constraint firstAttribute="width" constant="25" id="Fp3-Se-Ml7"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAg-qO-6H7" customClass="bold15Label" customModule="TiTi_Travel" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAg-qO-6H7">
                                                 <rect key="frame" x="55" y="0.0" width="278" height="25"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -419,11 +516,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0e-qr-xZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Top-Su-5b1"/>
             </objects>
-            <point key="canvasLocation" x="-484.05797101449281" y="813.61607142857144"/>
+            <point key="canvasLocation" x="-488" y="832"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="000-Cg-XNt"/>
+        <segue reference="9ee-4z-PKI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>

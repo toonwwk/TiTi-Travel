@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct TouristSpotResponse: Decodable {
+    let found: Int?
+    let locations: [TouristSpot]?
+}

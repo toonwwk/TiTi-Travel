@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import MapKit
+
+struct Location {
+    let title: String
+    let coordinate: CLLocationCoordinate2D
+}

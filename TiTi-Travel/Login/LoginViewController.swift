@@ -18,9 +18,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var iconAppImageView: UIImageView!
     @IBOutlet weak var iconUserImageView: UIImageView!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: LoginTextField!
     @IBOutlet weak var iconPasswordImageView: UIImageView!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: LoginTextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgetPasswordButton: UIButton!
     @IBOutlet weak var registerLabel: UILabel!
@@ -47,34 +47,25 @@ class LoginViewController: UIViewController {
     func commonInit() {
         loginButton.setTitle("Sign In", for: .normal)
         loginButton.backgroundColor = UIColor.app.white
-        loginButton.setTitleColor(UIColor.app.green, for: .normal)
-        forgetPasswordButton.setTitle("Forget password?", for: .normal)
-        forgetPasswordButton.setTitleColor(UIColor.app.white, for: .normal)
-        forgetPasswordButton.titleLabel?.font = UIFont.app.regular13
-        usernameTextField.borderStyle = .none
-        usernameTextField.tintColor = UIColor.app.gray205
-        usernameTextField.textColor = UIColor.app.white
+        loginButton.setFontAndColor(with: UIFont.app.bold15, and: UIColor.app.green)
+        usernameTextField.setPlaceHolder(with: "username")
+        usernameTextField.returnKeyType = UIReturnKeyType.done
         usernameTextField.delegate = self
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
-        usernameTextField.font = UIFont.app.regular15
-        passwordTextField.borderStyle = .none
-        passwordTextField.tintColor = UIColor.app.gray205
-        passwordTextField.textColor = UIColor.app.white
-        passwordTextField.placeholder = "password"
-        passwordTextField.font = UIFont.app.regular15
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
+        passwordTextField.setPlaceHolder(with: "password")
+        passwordTextField.returnKeyType = UIReturnKeyType.done
         passwordTextField.delegate = self
         registerLabel.text = "Do not have an account?"
-        registerLabel.font = UIFont.app.regular15
-        registerLabel.textColor = UIColor.app.white
-        registerButton.titleLabel?.font = UIFont.app.regular15
-        registerButton.setTitleColor(UIColor.app.brown, for: .normal)
-        registerButton.titleLabel?.attributedText = NSAttributedString(string: "Sign Up", attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
-        registerButton.setTitle(" Sign Up", for: .normal)
+        registerLabel.setFontAndColor(with: UIFont.app.regular15, and: UIColor.app.white)
+        registerButton.setFontAndColor(with: UIFont.app.regular15, and: UIColor.app.brown)
+        registerButton.setUnderlinedText(with: " Sign up")
         backgroundView.backgroundColor = UIColor.app.green
         iconAppImageView.image = UIImage.app.appLogo
         iconUserImageView.image = UIImage.app.username
         iconPasswordImageView.image = UIImage.app.password
+        
+        //        forgetPasswordButton.setTitle("Forget password?", for: .normal)
+        //        forgetPasswordButton.setTitleColor(UIColor.app.white, for: .normal)
+        //        forgetPasswordButton.titleLabel?.font = UIFont.app.regular13
     }
     
     func configureNavigationBar() {
@@ -88,8 +79,6 @@ class LoginViewController: UIViewController {
 //        popupVC.canTapOutsideToDismiss = true
 //        popupVC.cornerRadius = 10
 //        popupVC.shadowEnabled = true
-//        errorPopUpController.transitioningDelegate = self
-//        errorPopUpController.modalPresentationStyle = .formSheet
 //        present(popupVC, animated: true, completion: nil)
 //        errorPopUpController.configure(with: "Error I sus")
         delegate?.loginViewControllerDidTapLoginButton(self)

@@ -10,16 +10,8 @@ import UIKit
 //MARK:- While border view
 class BorderView: UIView {
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
-    }
-    
-    func commonInit() {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.app.white.cgColor
         self.layer.backgroundColor = UIColor.app.clear.cgColor
@@ -30,16 +22,8 @@ class BorderView: UIView {
 //MARK:- Separated gray line view
 class LineView: UIView {
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
-    }
-    
-    func commonInit() {
         self.backgroundColor = UIColor.app.gray205
     }
     
@@ -48,16 +32,8 @@ class LineView: UIView {
 //MARK:- Separated green line view
 class GreenLineView: UIView {
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
-    }
-    
-    func commonInit() {
         self.backgroundColor = UIColor.app.green
     }
     
@@ -66,16 +42,8 @@ class GreenLineView: UIView {
 //MARK:- View with shadow
 class RoundViewWithEffect: UIView {
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
-    }
-    
-    func commonInit() {
         self.backgroundColor = UIColor.app.white
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.app.gray205.cgColor
@@ -92,18 +60,9 @@ class RoundViewWithEffect: UIView {
 //MARK:- Round button
 class RoundButton: UIButton {
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
-    }
-    
-    func commonInit() {
         self.layer.cornerRadius = self.frame.height/2
-        self.titleLabel?.font = UIFont.app.bold15
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 40).cgPath
         self.layer.shadowOpacity = 0.25
         self.layer.shadowOffset = CGSize(width: 4, height: 4)
@@ -114,16 +73,8 @@ class RoundButton: UIButton {
 //MARK:- Round image view
 class RoundImageView: UIImageView {
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
-    }
-    
-    func commonInit() {
         self.layer.masksToBounds = false
         self.layer.cornerRadius = self.frame.width / 2
         self.clipsToBounds = true
@@ -132,38 +83,156 @@ class RoundImageView: UIImageView {
     
 }
 
-//MARK:- semibold 13 label
-class semiBold13Label: UILabel {
-    
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
+//MARK:- Label regular
+class Regular13BrownLabel: UILabel {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
+        self.font = UIFont.app.regular13
+        self.textColor = UIColor.app.brown
     }
     
-    func commonInit() {
+}
+
+class Regular15BrownLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.regular15
+        self.textColor = UIColor.app.brown
+    }
+    
+}
+
+class Regular15GreenLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.regular15
+        self.textColor = UIColor.app.green
+    }
+    
+}
+
+class Regular15WhiteLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.regular15
+        self.textColor = UIColor.app.white
+    }
+    
+}
+
+class Regular15GrayLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.regular15
+        self.textColor = UIColor.app.gray229
+    }
+    
+}
+
+
+
+
+//MARK:- Label semibold
+class SemiBold15BrownLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.semibold15
+        self.textColor = UIColor.app.brown
+    }
+    
+}
+
+
+class SemiBold13GreenLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         self.font = UIFont.app.semibold13
         self.textColor = UIColor.app.green
     }
+    
 }
 
-//MARK:- bold 15 label
-class bold15Label: UILabel {
-    
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
+class SemiBold10GreenLabel: UILabel {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        commonInit()
+        self.font = UIFont.app.semibold10
+        self.textColor = UIColor.app.green
     }
     
-    func commonInit() {
+}
+
+//MARK:- Label bold
+class Bold18GreenLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.bold18
+        self.textColor = UIColor.app.green
+    }
+    
+}
+
+class Bold15GreenLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         self.font = UIFont.app.bold15
         self.textColor = UIColor.app.green
     }
+    
+}
+
+class Bold15BrownLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.bold15
+        self.textColor = UIColor.app.brown
+    }
+    
+}
+
+class Bold15WhiteLabel: UILabel {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.font = UIFont.app.bold15
+        self.textColor = UIColor.app.white
+    }
+    
+}
+
+
+//MARK:- Auth Textfield
+class LoginTextField: UITextField {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.borderStyle = .none
+        self.tintColor = UIColor.app.gray205
+        self.font = UIFont.app.regular15
+        self.textColor = UIColor.app.white
+    }
+    
+}
+
+
+class RegisterTextField: UITextField {
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.borderStyle = .none
+        self.tintColor = UIColor.app.gray205
+        self.font = UIFont.app.regular15
+        self.textColor = UIColor.app.green
+    }
+    
 }

@@ -47,7 +47,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="do9-We-6cF" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
                                         <rect key="frame" x="40" y="0.0" width="290" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQO-Tp-zCt">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQO-Tp-zCt" customClass="LoginTextField" customModule="TiTi_Travel" customModuleProvider="target">
                                                 <rect key="frame" x="7" y="7" width="276" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -93,7 +93,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2r-Id-11N" customClass="BorderView" customModule="TiTi_Travel" customModuleProvider="target">
                                         <rect key="frame" x="40" y="0.0" width="290" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMo-qT-vaL">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMo-qT-vaL" customClass="LoginTextField" customModule="TiTi_Travel" customModuleProvider="target">
                                                 <rect key="frame" x="7" y="7" width="276" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -117,7 +117,7 @@
                                     <constraint firstItem="N2r-Id-11N" firstAttribute="leading" secondItem="I9Z-3W-thd" secondAttribute="trailing" id="xEh-Ua-srK"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k7-FI-9SE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k7-FI-9SE">
                                 <rect key="frame" x="30" y="474" width="330" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
