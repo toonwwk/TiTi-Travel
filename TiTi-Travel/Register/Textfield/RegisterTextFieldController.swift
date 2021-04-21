@@ -39,10 +39,7 @@ class RegisterTextFieldController: UIView {
         backgroundColor = UIColor.app.white
         leftLabel.textColor = UIColor.app.green
         leftLabel.font = UIFont.app.semibold15
-        textField.borderStyle = .none
-        textField.font = UIFont.app.regular15
-        textField.textColor = UIColor.app.green
-        textField.tintColor = UIColor.app.gray205
+        textField.initStyle(with: .register)
         textField.delegate = self
         errorLabel.textColor = UIColor.app.orange
         errorLabel.font = UIFont.app.regular10

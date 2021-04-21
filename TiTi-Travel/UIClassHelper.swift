@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK:- While border view
 class BorderView: UIView {
     
     override class func awakeFromNib() {
@@ -26,6 +27,7 @@ class BorderView: UIView {
     
 }
 
+//MARK:- Separated gray line view
 class LineView: UIView {
     
     override class func awakeFromNib() {
@@ -43,6 +45,7 @@ class LineView: UIView {
     
 }
 
+//MARK:- Separated green line view
 class GreenLineView: UIView {
     
     override class func awakeFromNib() {
@@ -60,6 +63,7 @@ class GreenLineView: UIView {
     
 }
 
+//MARK:- View with shadow
 class RoundViewWithEffect: UIView {
     
     override class func awakeFromNib() {
@@ -85,6 +89,7 @@ class RoundViewWithEffect: UIView {
         
 }
 
+//MARK:- Round button
 class RoundButton: UIButton {
     
     override class func awakeFromNib() {
@@ -106,6 +111,7 @@ class RoundButton: UIButton {
     
 }
 
+//MARK:- Round image view
 class RoundImageView: UIImageView {
     
     override class func awakeFromNib() {
@@ -126,6 +132,7 @@ class RoundImageView: UIImageView {
     
 }
 
+//MARK:- semibold 13 label
 class semiBold13Label: UILabel {
     
     override class func awakeFromNib() {
@@ -143,6 +150,7 @@ class semiBold13Label: UILabel {
     }
 }
 
+//MARK:- bold 15 label
 class bold15Label: UILabel {
     
     override class func awakeFromNib() {
