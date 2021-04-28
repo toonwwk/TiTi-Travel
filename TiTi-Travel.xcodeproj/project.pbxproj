@@ -45,6 +45,8 @@
 		C8C2701426302D480009877A /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2701226302D480009877A /* ImageCollectionViewCell.xib */; };
 		C8C2701C263049090009877A /* TouristSpotDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2701A263049090009877A /* TouristSpotDetailTableViewCell.swift */; };
 		C8C2701D263049090009877A /* TouristSpotDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2701B263049090009877A /* TouristSpotDetailTableViewCell.xib */; };
+		C8C270202631BED00009877A /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2701F2631BED00009877A /* Mock.swift */; };
+		C8C270262631F61D0009877A /* TouristSpotDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C270252631F61D0009877A /* TouristSpotDetailViewModel.swift */; };
 		C8E263B02600C49D008AEDC3 /* RegisterTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E263AF2600C49D008AEDC3 /* RegisterTextFieldViewModel.swift */; };
 		C8E2BADA25E3BDED00AD1D00 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BAD925E3BDED00AD1D00 /* ApplicationCoordinator.swift */; };
 		C8E2BADE25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */; };
@@ -57,6 +59,8 @@
 		C8E878AE26207ED60016D310 /* TouristSpotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E878AD26207ED60016D310 /* TouristSpotResponse.swift */; };
 		C8E878B226207FD10016D310 /* TouristSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E878B126207FD10016D310 /* TouristSpot.swift */; };
 		C8E878BE2620C9B60016D310 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E878BD2620C9B60016D310 /* Location.swift */; };
+		C8EA81C62636BA4800083FA8 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EA81C52636BA4800083FA8 /* FilterViewModel.swift */; };
+		C8EA81C926370F2D00083FA8 /* QueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EA81C826370F2D00083FA8 /* QueryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +106,8 @@
 		C8C2701226302D480009877A /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8C2701A263049090009877A /* TouristSpotDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSpotDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C8C2701B263049090009877A /* TouristSpotDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TouristSpotDetailTableViewCell.xib; sourceTree = "<group>"; };
+		C8C2701F2631BED00009877A /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		C8C270252631F61D0009877A /* TouristSpotDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSpotDetailViewModel.swift; sourceTree = "<group>"; };
 		C8E263AF2600C49D008AEDC3 /* RegisterTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextFieldViewModel.swift; sourceTree = "<group>"; };
 		C8E2BAD925E3BDED00AD1D00 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		C8E2BADD25E3BEEA00AD1D00 /* UserAuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationCoordinator.swift; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 		C8E878AD26207ED60016D310 /* TouristSpotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSpotResponse.swift; sourceTree = "<group>"; };
 		C8E878B126207FD10016D310 /* TouristSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSpot.swift; sourceTree = "<group>"; };
 		C8E878BD2620C9B60016D310 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C8EA81C52636BA4800083FA8 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		C8EA81C826370F2D00083FA8 /* QueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,9 +185,9 @@
 		C87EF96A25DC5B9800DD0C34 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				C8E263AD2600C46E008AEDC3 /* Textfield */,
 				C87EF96B25DC5BB800DD0C34 /* RegisterViewController.storyboard */,
 				C87EF96E25DC5C5C00DD0C34 /* RegisterViewController.swift */,
-				C8E263AD2600C46E008AEDC3 /* Textfield */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 				C896E0EF25D980A300FCADAC /* Info.plist */,
 				C896E10B25D991C400FCADAC /* Helper.swift */,
 				C83E1FE125DAF48700B5009E /* UIClassHelper.swift */,
+				C8C2701F2631BED00009877A /* Mock.swift */,
 			);
 			path = "TiTi-Travel";
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				C8C2701026302D220009877A /* ImageCollectionViewCell */,
 				C8C2700A263023740009877A /* TouristSpotDetailViewController.storyboard */,
 				C8C2700D2630237E0009877A /* TouristSpotDetailViewController.swift */,
+				C8C270252631F61D0009877A /* TouristSpotDetailViewModel.swift */,
 			);
 			path = TouristSpotDetail;
 			sourceTree = "<group>";
@@ -349,6 +359,7 @@
 				C89954A42628B0E800A3DA9A /* DetailCell */,
 				C899549E2628B09D00A3DA9A /* HeaderCell */,
 				C8E3076A26283EBF00E26B78 /* FilterViewController.swift */,
+				C8EA81C52636BA4800083FA8 /* FilterViewModel.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -359,6 +370,7 @@
 				C8E878AD26207ED60016D310 /* TouristSpotResponse.swift */,
 				C8E878B126207FD10016D310 /* TouristSpot.swift */,
 				C8E878BD2620C9B60016D310 /* Location.swift */,
+				C8EA81C826370F2D00083FA8 /* QueryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -507,14 +519,18 @@
 				C8E2BADA25E3BDED00AD1D00 /* ApplicationCoordinator.swift in Sources */,
 				C8C2701C263049090009877A /* TouristSpotDetailTableViewCell.swift in Sources */,
 				C87EF96F25DC5C5C00DD0C34 /* RegisterViewController.swift in Sources */,
+				C8EA81C62636BA4800083FA8 /* FilterViewModel.swift in Sources */,
 				C89954AF2628B53200A3DA9A /* CollectionReusableView.swift in Sources */,
 				C86F222A260CE3FE001F2464 /* SideMenuViewController.swift in Sources */,
 				C893C91F261C7C1900B2F85C /* SearchingLocationTableViewCell.swift in Sources */,
+				C8C270202631BED00009877A /* Mock.swift in Sources */,
 				C896E10225D986E600FCADAC /* LoginViewController.swift in Sources */,
+				C8C270262631F61D0009877A /* TouristSpotDetailViewModel.swift in Sources */,
 				C896E0E225D980A100FCADAC /* AppDelegate.swift in Sources */,
 				C8E3075926276F2200E26B78 /* CustomPointAnnotationViewModel.swift in Sources */,
 				C8E878BE2620C9B60016D310 /* Location.swift in Sources */,
 				C8E878AE26207ED60016D310 /* TouristSpotResponse.swift in Sources */,
+				C8EA81C926370F2D00083FA8 /* QueryModel.swift in Sources */,
 				C8C2701326302D480009877A /* ImageCollectionViewCell.swift in Sources */,
 				C827912F260CF13500BC3838 /* SideMenuViewModel.swift in Sources */,
 				C85893D825E1220B00412063 /* MapViewControllerViewModel.swift in Sources */,

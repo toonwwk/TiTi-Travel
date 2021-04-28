@@ -12,7 +12,7 @@ class FilterDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var detailBackground: UIView!
     
-    private var selectedState = false
+    var selectedState = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +32,10 @@ class FilterDetailCollectionViewCell: UICollectionViewCell {
         detailLabel.text = text
     }
     
-    func toggleState() {
-        selectedState = !selectedState
-        detailBackground.layer.borderColor = selectedState ? UIColor.app.brown.cgColor : UIColor.app.gray192.cgColor
-        detailLabel.textColor = selectedState ? UIColor.app.brown : UIColor.app.gray192
+    func configure(with state: Bool) {
+        selectedState = state
+        detailBackground.layer.borderColor = selectedState ? UIColor.app.brown.cgColor: UIColor.app.gray192.cgColor
+        detailLabel.textColor = selectedState ? UIColor.app.brown: UIColor.app.gray192
     }
-
+    
 }

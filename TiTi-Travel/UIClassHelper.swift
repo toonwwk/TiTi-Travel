@@ -24,7 +24,7 @@ class LineView: UIView {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        self.backgroundColor = UIColor.app.gray205
+        self.backgroundColor = UIColor.app.gray229
     }
     
 }

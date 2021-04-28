@@ -87,9 +87,6 @@
                                     <constraint firstAttribute="height" constant="25" id="yNX-xK-0yp"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didTapFilterButton:" destination="Sio-VU-mml" eventType="touchUpInside" id="WOT-ix-Vam"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuY-oS-iMI" customClass="RoundButton" customModule="TiTi_Travel" customModuleProvider="target">
                                 <rect key="frame" x="349" y="712" width="50" height="50"/>
@@ -203,7 +200,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Cle-Au-are" firstAttribute="leading" secondItem="W1B-FU-Xro" secondAttribute="leading" constant="20" id="2nA-Hh-wJv"/>
                                     <constraint firstAttribute="trailing" secondItem="Ch0-gh-afC" secondAttribute="trailing" id="Bzz-Yq-0ma"/>
@@ -218,6 +215,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="W1B-FU-Xro" firstAttribute="leading" secondItem="RDa-8e-gzw" secondAttribute="leading" constant="61" id="1Ht-fP-IOs"/>
                             <constraint firstAttribute="bottom" secondItem="W1B-FU-Xro" secondAttribute="bottom" id="By5-IH-KmW"/>
@@ -275,7 +273,6 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bx8-92-tO3">
                                                 <rect key="frame" x="116.5" y="65" width="120" height="120"/>
-                                                <color key="backgroundColor" red="0.14901960780000001" green="0.76078431369999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="cJ8-CC-yHH"/>
                                                     <constraint firstAttribute="width" constant="120" id="re5-5z-tKO"/>
@@ -301,7 +298,7 @@
                                             <constraint firstItem="bx8-92-tO3" firstAttribute="centerX" secondItem="e87-nU-BDk" secondAttribute="centerX" id="qwa-VK-GRZ"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rM-RS-3uJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rM-RS-3uJ" customClass="Bold15GreenLabel" customModule="TiTi_Travel" customModuleProvider="target">
                                         <rect key="frame" x="10" y="260" width="333" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Lbg-uI-f69"/>
@@ -313,7 +310,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iab-Xl-Cqj">
                                         <rect key="frame" x="10" y="305" width="333" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhX-Hy-x4q">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhX-Hy-x4q" customClass="SemiBold13GreenLabel" customModule="TiTi_Travel" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="dX5-5G-178"/>
@@ -350,7 +347,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-gs-klj">
                                         <rect key="frame" x="10" y="350" width="333" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-0F-cyq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-0F-cyq" customClass="SemiBold13GreenLabel" customModule="TiTi_Travel" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Tbb-cN-vad"/>
@@ -387,7 +384,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-xA-i46">
                                         <rect key="frame" x="10" y="395" width="333" height="25"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfF-52-P8k">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfF-52-P8k" customClass="SemiBold13GreenLabel" customModule="TiTi_Travel" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="V81-9v-FzY"/>
@@ -428,7 +425,7 @@
                                             <constraint firstAttribute="height" constant="1" id="vG3-kb-oyb"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gu2-3C-olm">
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gu2-3C-olm">
                                         <rect key="frame" x="10" y="461" width="333" height="25"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36Z-qm-TTZ">
@@ -457,7 +454,7 @@
                                             <constraint firstItem="EAg-qO-6H7" firstAttribute="top" secondItem="gu2-3C-olm" secondAttribute="top" id="mkx-za-J0H"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ej-Iw-Avd" customClass="GreenLineView" customModule="TiTi_Travel" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ej-Iw-Avd" customClass="GreenLineView" customModule="TiTi_Travel" customModuleProvider="target">
                                         <rect key="frame" x="10" y="506" width="333" height="1"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
@@ -465,7 +462,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="2Ej-Iw-Avd" firstAttribute="top" secondItem="gu2-3C-olm" secondAttribute="bottom" constant="20" id="1Z2-hr-caH"/>
                                     <constraint firstItem="NHy-El-m4m" firstAttribute="top" secondItem="Saq-xA-i46" secondAttribute="bottom" constant="20" id="5F4-wo-rlS"/>
@@ -504,12 +501,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="TpW-BQ-eWH"/>
                     <connections>
-                        <outlet property="ageLabel" destination="Poe-iM-lVz" id="XBH-8L-87d"/>
-                        <outlet property="firstNameLabel" destination="IMJ-sX-BKZ" id="uM5-OM-RWR"/>
+                        <outlet property="ageLabel" destination="IMJ-sX-BKZ" id="drL-hy-Jhm"/>
+                        <outlet property="backgroundView" destination="e87-nU-BDk" id="CEi-wR-cZX"/>
                         <outlet property="helloLabel" destination="eJr-Yh-CGx" id="pza-og-W3X"/>
                         <outlet property="imageView" destination="bx8-92-tO3" id="vkW-mg-dWM"/>
-                        <outlet property="lastNameLabel" destination="kFx-YO-kSA" id="keL-jU-XwD"/>
+                        <outlet property="lastNameLabel" destination="Poe-iM-lVz" id="oCT-ow-TyH"/>
                         <outlet property="logoutLabel" destination="EAg-qO-6H7" id="Ttj-Ee-wbT"/>
+                        <outlet property="nameLabel" destination="kFx-YO-kSA" id="keL-jU-XwD"/>
                         <segue destination="KPD-WL-1nk" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="000-Cg-XNt"/>
                     </connections>
                 </viewController>

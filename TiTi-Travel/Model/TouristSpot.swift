@@ -8,11 +8,14 @@
 import Foundation
 
 struct TouristSpot: Decodable {
+    let category: [String]?
     let name: String?
     let description: String?
-    let price: Double?
-    let lat: Double?
-    let long: Double?
-    let images: [String]?
+    let estimatePrice: Double?
+    let latitude: Double?
+    let longtitude: Double?
+    let image: [String]?
     let priceRange: String?
+    let id: Int?
 }
+

@@ -8,53 +8,8 @@
 import UIKit
 import SWRevealViewController
 
-enum FilterDetail: Int, CaseIterable {
-    case category
-    case priceRange
-}
-
-enum Category: Int, CaseIterable {
-    case historical
-    case shoppingMall
-    case caltural
-    case aquariumAndZoo
-    case sportsAndPhysicalActivity
-    case spaAndMassage
-    case nightlife
-    case cafeAndChillax
-    case restaurant
-    
-    var description : String {
-        switch self {
-        case .historical: return "Historical"
-        case .shoppingMall: return "Shopping Mall"
-        case .caltural: return "Cutural"
-        case .aquariumAndZoo: return "Aquarium and Zoo"
-        case .sportsAndPhysicalActivity: return "Sports"
-        case .spaAndMassage: return "Spa and Massage"
-        case .nightlife: return "Nightlift"
-        case .cafeAndChillax: return "Cafe"
-        case .restaurant: return "Restaurant"
-        }
-    }
-}
-
-enum PriceRange: Int, CaseIterable {
-    case low
-    case mid
-    case high
-    
-    var description : String {
-        switch self {
-        case .low: return "Low"
-        case .mid: return "Mid"
-        case .high: return "High"
-        }
-    }
-}
-
 protocol FilterViewControllerDelegate: AnyObject {
-    func didTapConfirm()
+    func didTapConfirm(with categories: [String], and priceRange: String?)
 }
 
 class FilterViewController: UIViewController {
@@ -64,8 +19,10 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var filterLabel: UILabel!
     @IBOutlet weak var filterBackgroundView: UIView!
     
+    let viewModel = FilterViewModel();
+    private var allCell = [FilterDetailCollectionViewCell]()
     weak var delegate: FilterViewControllerDelegate?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         commonInit()
@@ -80,6 +37,7 @@ class FilterViewController: UIViewController {
         confirmButton.backgroundColor = UIColor.app.orange
         confirmButton.setFontAndColor(with: UIFont.app.bold15, and: UIColor.app.white)
         confirmButton.layer.cornerRadius = 20
+        filterCollectionView.backgroundColor = UIColor.app.white
         filterCollectionView.delegate = self
         filterCollectionView.dataSource = self
         filterCollectionView.register(UINib(nibName: "FilterDetailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterDetailCollectionViewCell")
@@ -87,8 +45,15 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func didTapConfirmButton(_ sender: UIButton) {
-        delegate?.didTapConfirm()
+        let categories = viewModel.selectedCategories
+        let priceRange = viewModel.selectedPriceRange
+        delegate?.didTapConfirm(with: categories, and: priceRange)
+        viewModel.clear()
         self.revealViewController()?.rightRevealToggle(animated: true)
+
+        for cell in allCell {
+            cell.configure(with: false)
+        }
     }
     
     
@@ -97,58 +62,49 @@ class FilterViewController: UIViewController {
 extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return FilterDetail.allCases.count
+        return viewModel.getNumberOfFilterSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch sectionType(at: IndexPath(row: 0, section: section)) {
-        case .category:
-            return Category.allCases.count
-        case .priceRange:
-            return PriceRange.allCases.count
-        }
+        return viewModel.getNumberOfItem(at: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterDetailCollectionViewCell", for: indexPath) as! FilterDetailCollectionViewCell
-        cell.configure(with: dataForRow(at: indexPath))
+        let description = viewModel.dataForRow(at: indexPath)
+        cell.configure(with: description)
+        allCell.append(cell)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CollectionReusableView", for: indexPath) as! CollectionReusableView
-        header.configure(with: dataForHeader(at: indexPath))
+        let description = viewModel.dataForHeader(at: indexPath)
+        header.configure(with: description)
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? FilterDetailCollectionViewCell {
-            cell.toggleState()
+            switch viewModel.sectionType(at: indexPath) {
+            case .category:
+                cell.configure(with: !cell.selectedState)
+            case .priceRange:
+                for row in 0..<viewModel.getNumberOfItem(at: indexPath.section) {
+                    guard let priceRangeCell = collectionView.cellForItem(at: IndexPath(row: row, section: indexPath.section)) as? FilterDetailCollectionViewCell else { return }
+                    
+                    row == indexPath.row ? priceRangeCell.configure(with: !cell.selectedState): priceRangeCell.configure(with: false)
+                }
+            }
+            
+            viewModel.didSelectedCell(at: indexPath)
         }
     }
     
     func sectionType(at indexPath: IndexPath) -> FilterDetail {
         return FilterDetail(rawValue: indexPath.section)!
     }
-    
-    func dataForRow(at indexPath: IndexPath) -> String {
-        switch sectionType(at: indexPath) {
-        case .category:
-            return Category(rawValue: indexPath.row)?.description ?? ""
-        case .priceRange:
-            return PriceRange(rawValue: indexPath.row)?.description ?? ""
-        }
-    }
-    
-    func dataForHeader(at indexPath: IndexPath) -> String {
-        switch sectionType(at: indexPath) {
-        case .category:
-            return "Categoories"
-        case .priceRange:
-            return "Price Range"
-        }
-    }
-    
+
 }
 
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EzPopup
 
 protocol RegisterViewControllerDelegate: AnyObject {
     func registerViewControllerDidTapNextButton(_ registerViewController: RegisterViewController)
@@ -30,6 +31,8 @@ class RegisterViewController: UIViewController {
     var lastNameTextfield: RegisterTextFieldController!
     var birthdayTextfield: RegisterTextFieldController!
 
+    private var  screenSize = UIScreen.main.bounds
+    
     weak var delegate: RegisterViewControllerDelegate?
     
     static func instantiate() -> RegisterViewController {
@@ -52,7 +55,7 @@ class RegisterViewController: UIViewController {
         addImageButton.setFontAndColor(with: UIFont.app.bold15, and: UIColor.app.green)
         backgroundView.backgroundColor = UIColor.app.white
         userPicImageView.image = UIImage.app.userImage
-        nextButton.setTitle("Next", for: .normal)
+        nextButton.setTitle("Sign Up", for: .normal)
         nextButton.setFontAndColor(with: UIFont.app.bold15, and: UIColor.app.white)
         nextButton.backgroundColor = UIColor.app.green
         
@@ -89,8 +92,20 @@ class RegisterViewController: UIViewController {
           present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func didTapNextButton(_ sender: RoundButton) {
-        delegate?.registerViewControllerDidTapNextButton(self)
+    @IBAction func didTapSignUpButton(_ sender: RoundButton) {
+        if usernameTextfield.isValid() && passwordTextfield.isValid() && firstNameTextfield.isValid() && lastNameTextfield.isValid() && birthdayTextfield.isValid() {
+            Mock.users[usernameTextfield.getText()] = passwordTextfield.getText()
+            delegate?.registerViewControllerDidTapNextButton(self)
+            return
+        }
+        
+        let errorPopUpController = ErrorPopupViewController()
+        let popupVC = PopupViewController(contentController: errorPopUpController, popupWidth: screenSize.width - 60, popupHeight: nil)
+        popupVC.canTapOutsideToDismiss = true
+        popupVC.cornerRadius = 10
+        popupVC.shadowEnabled = true
+        present(popupVC, animated: true, completion: nil)
+        errorPopUpController.configure(with: "Please fill all infomation")
     }
 }
 

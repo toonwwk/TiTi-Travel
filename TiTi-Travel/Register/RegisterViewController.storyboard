@@ -95,7 +95,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="didTapNextButton:" destination="3XF-iQ-SMn" eventType="touchUpInside" id="hRn-RZ-bpy"/>
+                                    <action selector="didTapSignUpButton:" destination="3XF-iQ-SMn" eventType="touchUpInside" id="hRn-RZ-bpy"/>
                                 </connections>
                             </button>
                         </subviews>

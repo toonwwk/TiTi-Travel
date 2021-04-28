@@ -15,9 +15,5 @@ class CustomPointAnnotation: MKPointAnnotation {
     init(with viewModel: CustomPointAnnotationViewModel) {
         self.viewModel = viewModel
     }
-    
-    func printSth() {
-        print(viewModel.title)
-    }
-    
+
 }

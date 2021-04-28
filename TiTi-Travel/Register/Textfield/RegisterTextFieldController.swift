@@ -21,7 +21,7 @@ class RegisterTextFieldController: UIView {
     @IBOutlet weak var textField: RegisterTextField!
     @IBOutlet weak var errorLabel: UILabel!
 
-    var isValid = false
+    var state = false
 
     private var textFieldType: RegisterTextFieldType!
     private var viewModel = RegisterTextFieldViewModel()
@@ -52,14 +52,27 @@ class RegisterTextFieldController: UIView {
         leftLabel.text = type.rawValue.titlecased()
         textField.attributedPlaceholder = NSAttributedString(string: type.rawValue.titlecased(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.app.gray229])
         
-        if(type == .birthDay) {
+        switch textFieldType {
+        case .birthDay:
             addDatePicker()
+        case .password:
+            textField.isSecureTextEntry = true
+        default:
+            return
         }
         
     }
     
     func startEditing() {
         textField.becomeFirstResponder()
+    }
+    
+    func isValid() -> Bool {
+        return state
+    }
+    
+    func getText() -> String {
+        return textField.text ?? ""
     }
     
     private func addDatePicker() {
@@ -101,7 +114,7 @@ extension RegisterTextFieldController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         let (result, errorMessage) = viewModel.validate(textField.text ?? "", with: textFieldType)
-        isValid = result
+        state = result
         errorLabel.text = errorMessage
     }
     

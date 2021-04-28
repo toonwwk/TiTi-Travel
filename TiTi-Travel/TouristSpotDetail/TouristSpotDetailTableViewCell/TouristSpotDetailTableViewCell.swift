@@ -8,13 +8,6 @@
 import UIKit
 import Kingfisher
 
-enum TouristSpotDetailTableViewCellType {
-    case title
-    case description
-    case price
-    case priceRange
-}
-
 class TouristSpotDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -26,8 +19,9 @@ class TouristSpotDetailTableViewCell: UITableViewCell {
     }
 
     func commonInit() {
-        descriptionLabel.setFontAndColor(with: UIFont.app.regular15, and: UIColor.app.green)
+        descriptionLabel.setFontAndColor(with: UIFont.app.semibold15, and: UIColor.app.brown)
         iconImageView.contentMode = .scaleAspectFill
+        iconImageView.tintColor = UIColor.app.brown
     }
     
     func configure(with image: UIImage, and text: String) {

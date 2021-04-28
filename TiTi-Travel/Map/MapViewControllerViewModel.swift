@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 enum ServiceStatusType {
     case loading, success, failed
@@ -18,9 +19,11 @@ class MapViewControllerViewModel {
     var statusType: ServiceStatusType = .loading
     var updateHandler: (() -> ())?
 
-    func fetchTouristSpots(lat: Int, long: Int, priceRange: String, categories: [String]) {
-        service.fetchData(lat: lat, long: long, priceRange: priceRange, categories: categories, isCompleted: { (data) in
-            self.touristSpots = data.locations ?? []
+    func fetchTouristSpots(with coordinate: CLLocationCoordinate2D, _ categories: [String], _ priceRange: String?) {
+        let model = QueryModel(lat: coordinate.latitude, long: coordinate.longitude, categories: categories, priceRange: priceRange)
+        
+        service.fetchData(with: model, isCompleted: { (data) in
+            self.touristSpots = data
             self.statusType = .success
             self.updateHandler?()
         }, isFailed: { (error) in
@@ -31,14 +34,30 @@ class MapViewControllerViewModel {
     
     func getNumberOfTouristSpots() -> Int { return statusType == .success ? touristSpots.count: 0 }
     
-    func dataForPointAnnotation(at index: Int) -> CustomPointAnnotationViewModel {
-        let touristSpot = touristSpots[index]
+    func dataForPinAnnotation(at touristSpot: TouristSpot) -> CustomPointAnnotationViewModel {
         let title = touristSpot.name ?? ""
         let des = touristSpot.description ?? ""
-        let price = touristSpot.price ?? 0.0
-        let images = touristSpot.images ?? [""]
+        let price = touristSpot.estimatePrice ?? 0.0
+        let images = touristSpot.image ?? [""]
         let priceRange = touristSpot.priceRange ?? "-"
-        return CustomPointAnnotationViewModel(title: title, des: des, price: price, images: images, priceRange: priceRange)
+        let lat = touristSpot.latitude ?? 0.0
+        let long = touristSpot.longtitude ?? 0.0
+        let coordinate = CLLocationCoordinate2DMake(lat, long)
+        return CustomPointAnnotationViewModel(title: title, des: des, price: price, images: images, priceRange: priceRange, coordinate: coordinate)
+    }
+    
+    func getTouristSpotAnnotations() -> [CustomPointAnnotation] {
+        var touristSpotAnnotations = [CustomPointAnnotation]()
+
+        for touristSpot in touristSpots {
+            let viewModel = dataForPinAnnotation(at: touristSpot)
+            let pin = CustomPointAnnotation(with: viewModel)
+            pin.title = viewModel.title
+            pin.coordinate = viewModel.coordinate
+            touristSpotAnnotations.append(pin)
         }
+        
+        return touristSpotAnnotations
+    }
     
 }

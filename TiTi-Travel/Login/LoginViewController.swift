@@ -26,7 +26,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerLabel: UILabel!
     @IBOutlet weak var registerButton: RoundButton!
 
+    private let viewModel = LoginViewModel()
+    
     private var  screenSize = UIScreen.main.bounds
+    
     weak var delegate: LoginViewControllerDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +65,7 @@ class LoginViewController: UIViewController {
         iconAppImageView.image = UIImage.app.appLogo
         iconUserImageView.image = UIImage.app.username
         iconPasswordImageView.image = UIImage.app.password
-        
+
         //        forgetPasswordButton.setTitle("Forget password?", for: .normal)
         //        forgetPasswordButton.setTitleColor(UIColor.app.white, for: .normal)
         //        forgetPasswordButton.titleLabel?.font = UIFont.app.regular13
@@ -74,13 +77,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapLoginButton(_ sender: UIButton) {
-//        let errorPopUpController = ErrorPopupViewController()
-//        let popupVC = PopupViewController(contentController: errorPopUpController, popupWidth: screenSize.width - 60, popupHeight: 260)
-//        popupVC.canTapOutsideToDismiss = true
-//        popupVC.cornerRadius = 10
-//        popupVC.shadowEnabled = true
-//        present(popupVC, animated: true, completion: nil)
-//        errorPopUpController.configure(with: "Error I sus")
+        if let errorMsg = viewModel.login(with: usernameTextField.text, and: passwordTextField.text) {
+            let errorPopUpController = ErrorPopupViewController()
+            let popupVC = PopupViewController(contentController: errorPopUpController, popupWidth: screenSize.width - 60, popupHeight: nil)
+            popupVC.canTapOutsideToDismiss = true
+            popupVC.cornerRadius = 10
+            popupVC.shadowEnabled = true
+            present(popupVC, animated: true, completion: nil)
+            errorPopUpController.configure(with: errorMsg)
+            return
+        }
+
         delegate?.loginViewControllerDidTapLoginButton(self)
     }
     
