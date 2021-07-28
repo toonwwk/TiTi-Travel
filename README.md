@@ -5,3 +5,6 @@ TiTi Travel is an iOS application creating for Sofware Design and Architecture c
 - MapKit
 - Storyboard with auto layout
 - Cocaopods
+
+## Click image below to watch the video
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=OUXG7hI16-E/0.jpg)](https://www.youtube.com/watch?v=OUXG7hI16-E)
