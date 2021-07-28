@@ -7,4 +7,4 @@ TiTi Travel is an iOS application creating for Sofware Design and Architecture c
 - Cocaopods
 
 ## Click image below to watch the video
-[![Imgur](http://i.imgur.com/zTONrOD.jpg)](https://www.youtube.com/watch?v=OUXG7hI16-E)
+[![Imgur](https://i.imgur.com/ymGOoUH.png)](https://www.youtube.com/watch?v=OUXG7hI16-E)
